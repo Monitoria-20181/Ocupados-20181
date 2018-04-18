@@ -1,0 +1,13 @@
+
+
+create table computadores (
+ laboratorio varchar(30),
+ identificador varchar(5),
+ equipo varchar(30)
+);
+create table datos(
+ estudiante varchar(45),
+equipo varchar(40),
+ logon timestamp,
+ logoff timestamp
+);
