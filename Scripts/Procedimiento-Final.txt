@@ -1,8 +1,5 @@
-
-CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_GETEQUIPOSOCUPADOS`(FECHACONSULTA timestamp)
+CREATE DEFINER=`root`@`localhost` PROCEDURE `SP_GETEQUIPOSOCUPADOS`(fechaConsulta DATETIME)
 BEGIN
-
-select com.identificador from computadores com, datos  dt 
-where (FECHACONSULTA >= dt.logon and dt.logoff is NULL) and com.equipo = dt.equipo;
-
-end
+	SELECT com.identificador from computadores com, datos  dt 
+	WHERE (fechaConsulta >= dt.logon and dt.logoff is NULL) AND com.equipo = dt.equipo;
+END;

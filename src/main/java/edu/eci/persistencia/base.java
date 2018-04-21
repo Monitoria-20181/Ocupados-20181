@@ -49,7 +49,7 @@ public class base {
 
             
 
-       entrada = new FileInputStream("C:\\Users\\Contabilidad\\Documents\\2016-2\\Pgr2\\pruebas html\\SQLQUERY\\conexion.txt");
+       entrada = new FileInputStream("Scripts\\conexion.txt");
        propiedades.load(entrada);
        
        servidor = propiedades.getProperty("servidor");
@@ -58,12 +58,12 @@ public class base {
        user = propiedades.getProperty("user");
        password = propiedades.getProperty("password");
        
-       System.out.println("jdbc:mysql://"+servidor+""+puerto+"/"+namebd+"?user="+user+"&password="+password);
+       System.out.println("jdbc:mysql://"+servidor+":"+puerto+"/"+namebd+"?user="+user+"&password="+password);
 
             
             
            Class.forName("com.mysql.jdbc.Driver");
-           con = DriverManager.getConnection("jdbc:mysql://"+servidor+""+puerto+"/"+namebd+"?user="+user+"&password="+password);
+           con = DriverManager.getConnection("jdbc:mysql://"+servidor+":"+puerto+"/"+namebd+"?user="+user+"&password="+password);
              //con = DriverManager.getConnection("jdbc:mysql://laboratorio.is.escuelaing.edu.co/control?user=controlr&password=PC-Libres@");
            
       
@@ -72,7 +72,7 @@ public class base {
           String dia = Integer.toString(c1.get(Calendar.DATE));
           String mes = Integer.toString(c1.get(Calendar.MONTH));
           
-            System.out.println(mes);
+          System.out.println(mes);
           String annio = Integer.toString(c1.get(Calendar.YEAR));
           int hora= c1.get(Calendar.HOUR_OF_DAY);
           int minutos= c1.get(Calendar.MINUTE);

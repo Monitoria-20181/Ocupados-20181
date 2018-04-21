@@ -1,5 +1,5 @@
-hostname = 10.2.65.37
+servidor = 10.2.65.37
 user = control
-port = 3306
+puerto = 3306
 password = control20101
-database = control
+namebd = control
