@@ -55,10 +55,10 @@ public class base {
             user = propiedades.getProperty("user");
             password = propiedades.getProperty("password");
 
-            System.out.println("jdbc:mysql://" + servidor + ":" + puerto + "/" + namebd + "?user=" + user + "&password=" + password);
+            System.out.println("jdbc:mysql://" + servidor + ":" + puerto + "/" + namebd + "?noAccessToProcedureBodies=true?user=" + user + "&password=" + password);
 
             Class.forName("com.mysql.jdbc.Driver");
-            con = DriverManager.getConnection("jdbc:mysql://" + servidor + ":" + puerto + "/" + namebd + "?user=" + user + "&password=" + password);
+            con = DriverManager.getConnection("jdbc:mysql://" + servidor + ":" + puerto + "/" + namebd + "?noAccessToProcedureBodies=true&user=" + user + "&password=" + password);
             //con = DriverManager.getConnection("jdbc:mysql://laboratorio.is.escuelaing.edu.co/control?user=controlr&password=PC-Libres@");
 
             Calendar c1 = Calendar.getInstance();
@@ -78,13 +78,12 @@ public class base {
             segundos1 = String.valueOf(segundos);
 
             Statement stmt = con.createStatement();
-            /*stmt.execute("CREATE DEFINER=`control`@`localhost` PROCEDURE `SP_GETEQUIPOSOCUPADOS`(fechaConsulta DATETIME)\n"
+            /*stmt.execute("PROCEDURE SP_GETEQUIPOSOCUPADOS(fechaConsulta DATETIME)\n"
                     + "BEGIN\n"
                     + "	SELECT com.identificador from computadores com, datos  dt \n"
                     + "	WHERE (fechaConsulta >= dt.logon and dt.logoff is NULL) AND com.equipo = dt.equipo;\n"
                     + "END;");*/
-            //String rs = " {call SP_GETEQUIPOSOCUPADOS('2016-08-10 18:19:03')}" ;
-            String rs = " {call SP_GETEQUIPOSOCUPADOS('" + annio + "-" + mes + "-" + dia + " " + hora1 + ":" + minutos1 + ":" + segundos1 + "')}";
+            String rs = " {call getEquiposOcupados('" + annio + "-" + mes + "-" + dia + " " + hora1 + ":" + minutos1 + ":" + segundos1 + "')}";
             System.out.println(rs);
             System.out.println("cada 10 segundos");
             CallableStatement cSP = con.prepareCall(rs);
