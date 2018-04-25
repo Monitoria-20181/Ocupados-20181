@@ -24,13 +24,13 @@ import java.util.logging.Logger;
  *
  * @author Contabilidad
  */
-public class base {
+public class Base {
 
     Connection con;
     Statement stmt = null;
     ResultSet rs = null;
 
-    public base() {
+    public Base() {
 
     }
 
@@ -55,11 +55,9 @@ public class base {
             user = propiedades.getProperty("user");
             password = propiedades.getProperty("password");
 
-            System.out.println("jdbc:mysql://" + servidor + ":" + puerto + "/" + namebd + "?noAccessToProcedureBodies=true?user=" + user + "&password=" + password);
 
             Class.forName("com.mysql.jdbc.Driver");
             con = DriverManager.getConnection("jdbc:mysql://" + servidor + ":" + puerto + "/" + namebd + "?noAccessToProcedureBodies=true&user=" + user + "&password=" + password);
-            //con = DriverManager.getConnection("jdbc:mysql://laboratorio.is.escuelaing.edu.co/control?user=controlr&password=PC-Libres@");
 
             Calendar c1 = Calendar.getInstance();
             String dia = Integer.toString(c1.get(Calendar.DATE));
@@ -78,11 +76,6 @@ public class base {
             segundos1 = String.valueOf(segundos);
 
             Statement stmt = con.createStatement();
-            /*stmt.execute("PROCEDURE SP_GETEQUIPOSOCUPADOS(fechaConsulta DATETIME)\n"
-                    + "BEGIN\n"
-                    + "	SELECT com.identificador from computadores com, datos  dt \n"
-                    + "	WHERE (fechaConsulta >= dt.logon and dt.logoff is NULL) AND com.equipo = dt.equipo;\n"
-                    + "END;");*/
             String rs = " {call getEquiposOcupados('" + annio + "-" + mes + "-" + dia + " " + hora1 + ":" + minutos1 + ":" + segundos1 + "')}";
             System.out.println(rs);
             System.out.println("cada 10 segundos");
@@ -90,12 +83,12 @@ public class base {
             ResultSet r = cSP.executeQuery();
 
             while (r.next()) {
-                System.out.println(r.getString(1));
+                //System.out.printf("Equipo ocupado: %s",r.getString(1));
                 equipos.add(r.getString(1));
             }
 
         } catch (Exception ex) {
-            Logger.getLogger(base.class.getName()).log(Level.SEVERE, null, ex);
+            Logger.getLogger(Base.class.getName()).log(Level.SEVERE, null, ex);
         }
         return equipos;
     }

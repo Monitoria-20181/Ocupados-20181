@@ -18,20 +18,14 @@ function connect() {
     var socket = new SockJS('/ws');
     stompClient = Stomp.over(socket);
     stompClient.connect({}, function(frame) {
-    setConnected(true);
-    console.log('Connected: ' + frame);
-    //var date = new Date();
-    //document.getElementById('fecha').innerHTML = Date();     
-    var strDate = Date().toString();
-    var local = null;
-      
-    stompClient.send("/app/message", {}, JSON.stringify({ 'message': local}));
-    stompClient.subscribe('/topic/messages', function(serverMessage){
-       
-     showServerMessage(JSON.parse(serverMessage.body).content);
-     
-   
-    });
+		setConnected(true);
+		console.log('Connected: ' + frame);
+        var strDate = Date().toString();
+		var local = null;
+		stompClient.send("/app/message", {}, JSON.stringify({ 'message': local}));
+		stompClient.subscribe('/topic/messages', function(serverMessage){
+			showServerMessage(JSON.parse(serverMessage.body).content);
+		});
     });
      
 }
@@ -39,7 +33,7 @@ function connect() {
     
 function disconnect() {
     if (stompClient != null) {
-    stompClient.disconnect();
+		stompClient.disconnect();
     }
     setConnected(false);
     console.log("Disconnected");
@@ -55,17 +49,13 @@ function sendMessage() {
 
 function showServerMessage(message) {
     
-    console.log(message + "ESTE ES");
+    console.log(message);
     var s = message;
-    var coma = ",";
-    var arregloDeCadenas = s.toString().split(coma);
-     for (var i=0; i < arregloDeCadenas.length; i++) {
-     console.log(arregloDeCadenas[i] + " espacio de cambio ");
-    }
-    //dividirCadena(s, coma);
-    
-    
-        // Laboratorio B0 //
+    var arregloDeCadenas = s.toString().split(",");
+    for (var i=0; i < arregloDeCadenas.length; i++) {
+		console.log(arregloDeCadenas[i] + " espacio de cambio ");
+    } 
+     /**   // Laboratorio B0 //
     
             //computador1
             var cambio=0; 
@@ -2435,7 +2425,7 @@ function showServerMessage(message) {
             
             
             
-            
+  **/          
             
             
     

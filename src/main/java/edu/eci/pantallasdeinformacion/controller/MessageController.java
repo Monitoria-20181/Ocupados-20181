@@ -7,7 +7,7 @@ package edu.eci.pantallasdeinformacion.controller;
 
 import edu.eci.pantallasdeinformacion.model.ClientMessage;
 import edu.eci.pantallasdeinformacion.model.ServerMessage;
-import edu.eci.persistencia.base;
+import edu.eci.persistencia.Base;
 import org.springframework.messaging.handler.annotation.MessageMapping;
 import org.springframework.messaging.handler.annotation.SendTo;
 import org.springframework.stereotype.Controller;
@@ -24,7 +24,7 @@ public class MessageController {
     public ServerMessage serverMessage(ClientMessage message) throws Exception {
         Thread.sleep(3000); 
         
-        base b= new base();
+        Base b= new Base();
         ArrayList<String> s = b.ejecutarSP();
     
         return new ServerMessage(s);
