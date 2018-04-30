@@ -9,13 +9,11 @@ and open the template in the editor.
 <html>
     <head>
         <title>Hello WebSocket</title>
-        <script src="sockjs-0.3.4.js"></script>
-        <script src="stomp.js"></script>
-        <script src="stomp-ws.js"></script>
-       
-                <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-        <title>Act.</title>
-
+        <script src="/js/sockjs-0.3.4.js"></script>
+        <script src="/js/stomp.js"></script>
+        <script src="/js/stomp-ws.js"></script>
+        <link href="/css/style.css" rel="stylesheet" type="text/css" media="all">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
       <!-- <title>Redirigir al navegador a otra URL</title> 
        <META HTTP-EQUIV="REFRESH" CONTENT="5;URL=index2.html"> -->
     </head>
@@ -28,34 +26,11 @@ and open the template in the editor.
    <BODY BACKGROUND="http://aupu.de/wp-content/uploads/2014/09/light-grey-2.jpg" TEXT="Black">
    <h1 ALIGN=center>Pantallas de información</h1>
    
-   <style>
-            h1 {
-              font-size: 38px;
-              color: #848484;
-              padding: 10px;
-            }
-            IMG{
-              position: absolute;
-              top:  250px; 
-              left: 390px;
-            }
-            canvas {
-                padding-left: 0;
-                padding-right: 0;
-                margin-left: auto;
-                margin-right: auto;
-                display: block;
-                width: 1000px;
-            }
-            hr {
-                background-color: #D8D8D8;
-                height: 5px;
-            }
-    </style>
+   
     
     <h1 ALIGN=center>Laboratorios de la decanatura de Sistemas </h1>
     <HR width=100% align="left">
-    <IMG SRC="thumbnail_logo lab de informatica_nuevo.jpg" WIDTH=300 HEIGHT=100 BORDER=0 VSPACE=4 HSPACE=7 ALT="Obra de K. Haring">  
+    <IMG SRC="thumbnail_logo lab de informatica_nuevo.jpg" WIDTH=300 HEIGHT=100 BORDER=0 VSPACE=30  HSPACE=165 ALT="Obra de K. Haring"> 
     <canvas id="myCanvas"  width="1000" height="500" style="border:10px solid #d3d3d3;">
         Your browser does not support the HTML5 canvas tag.</canvas>
    
@@ -63,15 +38,15 @@ and open the template in the editor.
     
                          <!--  Nombres de los laboratorios -->
     
-                         <script>
+                        <!-- <script>
                             var c = document.getElementById("myCanvas");
                             var ctx = c.getContext("2d");
                             var miimagen= new Image();
                             //miimagen.src="http://laboratorio.is.escuelaing.edu.co:8080/silabinfoap/images/laboratorioInformaticaLogo.png";
                             miimagen.onload =funtion(){
-                                  ctx.drawImage(miimagen,0,0);
+                                  //ctx.drawImage(miimagen,0,0);
                             }
-                         </script>
+                         </script>-->
                          <script>
                             var c = document.getElementById("myCanvas");
                             var ctx = c.getContext("2d");

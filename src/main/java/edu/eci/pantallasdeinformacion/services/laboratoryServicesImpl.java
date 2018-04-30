@@ -31,6 +31,7 @@ public class laboratoryServicesImpl implements laboratoryServices {
             put("Interactiva",7);
         }
     };
+    
             
     private laboratoryServicesImpl() {
         laboratories= new ArrayList<>();
