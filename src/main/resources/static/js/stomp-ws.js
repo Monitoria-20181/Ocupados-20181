@@ -7,6 +7,36 @@
   //Puesto de pantallas 1-->                        
 
 var stompClient = null;
+
+var b0computers =
+	[
+	{"bl1":{"posX":640,"posY":30}},
+	{"bl2":{"posX":640,"posY":70}},
+	{"bl3":{"posX":660,"posY":100}},
+	{"bl4":{"posX":680,"posY":70}},
+	{"bl5":{"posX":680,"posY":30}},
+	{"bl6":{"posX":740,"posY":30}},
+	{"bl7":{"posX":740,"posY":70}},
+	{"bl8":{"posX":760,"posY":100}},
+	{"bl9":{"posX":780,"posY":70}},
+	{"bl10":{"posX":780,"posY":30}},
+	{"bl11":{"posX":840,"posY":30}},
+	{"bl12":{"posX":840,"posY":70}},
+	{"bl13":{"posX":860,"posY":100}},
+	{"bl14":{"posX":880,"posY":70}},
+	{"bl15":{"posX":880,"posY":30}},
+	{"bl16":{"posX":940,"posY":30}},
+	{"bl17":{"posX":940,"posY":70}},
+	{"bl18":{"posX":960,"posY":100}},
+	{"bl19":{"posX":980,"posY":70}},
+	{"bl20":{"posX":980,"posY":30}},
+	{"bl21":{"posX":960,"posY":160}},
+	{"bl22":{"posX":920,"posY":160}},	
+	{"bl23":{"posX":890,"posY":180}},
+	{"bl24":{"posX":960,"posY":200}},
+	{"bl25":{"posX":920,"posY":200}}
+	];
+	
 function setConnected(connected) {
     document.getElementById('connect').disabled = connected;
     document.getElementById('disconnect').disabled = !connected;
@@ -24,7 +54,7 @@ function connect() {
 		var local = null;
 		stompClient.send("/app/message", {}, JSON.stringify({ 'message': local}));
 		stompClient.subscribe('/topic/messages', function(serverMessage){
-			showServerMessage(JSON.parse(serverMessage.body).content);
+			showB0(JSON.parse(serverMessage.body).content);
 		});
     });
      
@@ -47,6 +77,29 @@ function sendMessage() {
     stompClient.send("/app/message", {}, JSON.stringify({ 'message': message }));
 }
 
+function showB0(message){
+	//alert("entra function");
+	var color="#00FF00";
+	var arregloDeCadenas = message.toString().split(",");
+	for (i=0;i< b0computers.length;i++){
+		//alert("entra for "+'bl'+(i+1));
+		if(arregloDeCadenas.includes('bl'+(i+1))){
+          //  alert("entra if ");
+			color="#B40404";
+		}
+		var c1 = document.getElementById("myCanvas");
+        var ctx1 = c1.getContext("2d");
+        ctx1.beginPath();
+		console.log(color);
+		console.log(b0computers[i]['bl'+(i+1)].posX);
+        ctx1.arc(b0computers[i]['bl'+(i+1)].posX,b0computers[i]['bl'+(i+1)].posY,8,0,2*Math.PI);
+		ctx1.fillStyle=color; 
+		ctx1.fill(); 
+        ctx1.stroke();
+	}
+}
+
+
 function showServerMessage(message) {
     
     console.log(message);
@@ -55,7 +108,7 @@ function showServerMessage(message) {
     for (var i=0; i < arregloDeCadenas.length; i++) {
 		console.log(arregloDeCadenas[i] + " espacio de cambio ");
     } 
-     /**   // Laboratorio B0 //
+       // Laboratorio B0 //
     
             //computador1
             var cambio=0; 
@@ -157,7 +210,7 @@ function showServerMessage(message) {
                             ctx4.stroke();
                         }
             }
-     
+			//computador5
              var cambio4=0;
              for (var i=0; i < arregloDeCadenas.length; i++) {
                      if(arregloDeCadenas[i] === "b3"){
@@ -183,6 +236,7 @@ function showServerMessage(message) {
                             //prubafinaldehoy
                         }
             }
+			//computador6
              var cambio5=0;
              for (var i=0; i < arregloDeCadenas.length; i++) {
                      if(arregloDeCadenas[i] === "b6"){
@@ -208,6 +262,7 @@ function showServerMessage(message) {
                             //prubafinaldehoy
                         }
             }
+			//computador7
              var cambio6=0;
               for (var i=0; i < arregloDeCadenas.length; i++) {
                      if(arregloDeCadenas[i] === "b7"){
@@ -233,6 +288,7 @@ function showServerMessage(message) {
                             //prubafinaldehoy
                         }
             }
+			//computador8
                var cambio7=0;
               for (var i=0; i < arregloDeCadenas.length; i++) {
                      if(arregloDeCadenas[i] === "b10"){
@@ -485,7 +541,7 @@ function showServerMessage(message) {
             }
                  var cambio17=0;
               for (var i=0; i < arregloDeCadenas.length; i++) {
-                     if(arregloDeCadenas[i] === "b20"){
+                     if(arregloDeCadenas[i] === "bl20"){
                             console.log("entra");
                             var c18 = document.getElementById("myCanvas");
                             var ctx18 = c18.getContext("2d");
@@ -2425,7 +2481,7 @@ function showServerMessage(message) {
             
             
             
-  **/          
+       
             
             
     
