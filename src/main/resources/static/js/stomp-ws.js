@@ -39,30 +39,30 @@ var b0computers =
 
 var labiswComputers =
         [
-            {"s1": {"posX": 650, "posY": 330}},
-            {"s2": {"posX": 650, "posY": 380}},
-            {"s3": {"posX": 650, "posY": 430}},
-            {"s4": {"posX": 650, "posY": 480}},
-            {"s5": {"posX": 745, "posY": 330}},
-            {"s6": {"posX": 745, "posY": 380}},
-            {"s7": {"posX": 745, "posY": 430}},
-            {"s8": {"posX": 745, "posY": 480}},
-            {"s9": {"posX": 775, "posY": 330}},
-            {"s10": {"posX": 775, "posY": 380}},
-            {"s11": {"posX": 775, "posY": 430}},
-            {"s12": {"posX": 775, "posY": 480}},
-            {"s13": {"posX": 865, "posY": 330}},
-            {"s14": {"posX": 865, "posY": 380}},
-            {"s15": {"posX": 865, "posY": 430}},
-            {"s16": {"posX": 865, "posY": 480}},
-            {"s17": {"posX": 895, "posY": 330}},
-            {"s18": {"posX": 895, "posY": 380}},
-            {"s19": {"posX": 895, "posY": 430}},
-            {"s20": {"posX": 895, "posY": 480}},
-            {"s21": {"posX": 985, "posY": 330}},
-            {"s22": {"posX": 985, "posY": 380}},
-            {"s23": {"posX": 985, "posY": 430}},
-            {"s24": {"posX": 985, "posY": 480}}
+            {"sl1": {"posX": 650, "posY": 330}},
+            {"sl2": {"posX": 650, "posY": 380}},
+            {"sl3": {"posX": 650, "posY": 430}},
+            {"sl4": {"posX": 650, "posY": 480}},
+            {"sl5": {"posX": 745, "posY": 330}},
+            {"sl6": {"posX": 745, "posY": 380}},
+            {"sl7": {"posX": 745, "posY": 430}},
+            {"sl8": {"posX": 745, "posY": 480}},
+            {"sl9": {"posX": 775, "posY": 330}},
+            {"sl10": {"posX": 775, "posY": 380}},
+            {"sl11": {"posX": 775, "posY": 430}},
+            {"sl12": {"posX": 775, "posY": 480}},
+            {"sl13": {"posX": 865, "posY": 330}},
+            {"sl14": {"posX": 865, "posY": 380}},
+            {"sl15": {"posX": 865, "posY": 430}},
+            {"sl16": {"posX": 865, "posY": 480}},
+            {"sl17": {"posX": 895, "posY": 330}},
+            {"sl18": {"posX": 895, "posY": 380}},
+            {"sl19": {"posX": 895, "posY": 430}},
+            {"sl20": {"posX": 895, "posY": 480}},
+            {"sl21": {"posX": 985, "posY": 330}},
+            {"sl22": {"posX": 985, "posY": 380}},
+            {"sl23": {"posX": 985, "posY": 430}},
+            {"sl24": {"posX": 985, "posY": 480}}
         ];
 
 function setConnected(connected) {
@@ -130,7 +130,7 @@ function showB0(message) {
 
     for (i = 0; i < labiswComputers.length; i++) {
         //alert("entra for "+'bl'+(i+1));
-        if (arregloDeCadenas.includes('s' + (i + 1))) {
+        if (arregloDeCadenas.includes('sl' + (i + 1))) {
             //  alert("entra if ");
             color = "#B40404";
         }
@@ -139,14 +139,14 @@ function showB0(message) {
         ctx1.beginPath();
         //console.log(color);
         //console.log(labiswComputers[i]['s' + (i + 1)].posX);
-        ctx1.arc(labiswComputers[i]['s' + (i + 1)].posX, labiswComputers[i]['s' + (i + 1)].posY, 8, 0, 2 * Math.PI);
+        ctx1.arc(labiswComputers[i]['sl' + (i + 1)].posX, labiswComputers[i]['sl' + (i + 1)].posY, 8, 0, 2 * Math.PI);
         ctx1.fillStyle = color;
         ctx1.fill();
         ctx1.stroke();
     }
     
     
-    color = "#00FF00";
+    /*color = "#00FF00";
 
     for (i = 0; i < labpComputers.length; i++) {
         //alert("entra for "+'bl'+(i+1));
@@ -163,7 +163,7 @@ function showB0(message) {
         ctx1.fillStyle = color;
         ctx1.fill();
         ctx1.stroke();
-    }
+    }*/
 }
 
 
