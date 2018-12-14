@@ -61,9 +61,9 @@ public class Base {
 
             Calendar c1 = Calendar.getInstance();
             String dia = Integer.toString(c1.get(Calendar.DATE));
-            String mes = Integer.toString(c1.get(Calendar.MONTH));
+            String mes = Integer.toString(c1.get(Calendar.MONTH)+1);
 
-            System.out.println(mes);
+            
             String annio = Integer.toString(c1.get(Calendar.YEAR));
             int hora = c1.get(Calendar.HOUR_OF_DAY);
             int minutos = c1.get(Calendar.MINUTE);
@@ -76,14 +76,17 @@ public class Base {
             segundos1 = String.valueOf(segundos);
 
             Statement stmt = con.createStatement();
+            
+            System.out.println(dia + "/" + mes + "/" + annio + " " + hora + ":" + minutos + ":" + "segundos");
             String rs = " {call getEquiposOcupados('" + annio + "-" + mes + "-" + dia + " " + hora1 + ":" + minutos1 + ":" + segundos1 + "')}";
-            System.out.println(rs);
-            System.out.println("cada 10 segundos");
+            //System.out.println(rs);
+            //System.out.println("cada 10 segundos");
             CallableStatement cSP = con.prepareCall(rs);
             ResultSet r = cSP.executeQuery();
 
             while (r.next()) {
-                //System.out.printf("Equipo ocupado: %s",r.getString(1));
+                System.out.printf("Equipo ocupado: %s",r.getString(1));
+                System.out.print("\n");
                 equipos.add(r.getString(1));
             }
 
