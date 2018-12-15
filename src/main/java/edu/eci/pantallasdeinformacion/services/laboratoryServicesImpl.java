@@ -19,16 +19,19 @@ public class laboratoryServicesImpl implements laboratoryServices {
 
     private List<Laboratory> laboratories;
     private static laboratoryServicesImpl labService=null;
-    private static final int LAB_CANT=5;
-    private static final String[] LAB_NAMES={"Software","Plataformas","Redes","Multimedia","B0"};
+    private static final int LAB_CANT=8;
+    private static final String[] LAB_NAMES={"Software","Plataformas","Redes","Multimedia","B0","Interactiva", "Desarrollo de videojuegos", "Fundamentos de computacion"};
     private static final HashMap<String, Integer> CANT_COMPUTERS = new HashMap<String, Integer>() {
         {
+            //TODO Actualizar la información de los laboratorios con el numero de computadores a disposicion correctos.
             put("Software",24);
             put("Plataformas",21);
             put("Redes",12);
             put("Multimedia",12);
             put("B0",24);
             put("Interactiva",7);
+            put("Dessarrollo de videojuegos", 16);
+            put("Fundamentos de computacion", 24);
         }
     };
     
