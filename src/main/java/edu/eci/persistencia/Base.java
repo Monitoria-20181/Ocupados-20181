@@ -45,8 +45,10 @@ public class Base {
             String namebd;
             String user;
             String password;
-
-            entrada = new FileInputStream("Scripts\\conexion.txt");
+            
+            
+            ClassLoader classloader = Thread.currentThread().getContextClassLoader();
+            entrada = classloader.getResourceAsStream("conexion.txt");
             propiedades.load(entrada);
 
             servidor = propiedades.getProperty("servidor");

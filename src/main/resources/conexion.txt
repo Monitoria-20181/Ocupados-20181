@@ -1,0 +1,5 @@
+servidor = 10.2.65.37
+user = control
+puerto = 3306
+password = control20101
+namebd = control

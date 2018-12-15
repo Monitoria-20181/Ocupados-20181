@@ -1,4 +1,3 @@
-
 <!--
 To change this license header, choose License Headers in Project Properties.
 To change this template file, choose Tools | Templates
@@ -7,1430 +6,1407 @@ and open the template in the editor.
 <!DOCTYPE html>
 
 <html>
-    <head>
-        <title>Hello WebSocket</title>
-        <script src="/js/sockjs-0.3.4.js"></script>
-        <script src="/js/stomp.js"></script>
-        <script src="/js/stomp-ws.js"></script>
-        <script src="/js/b0App.js"></script>
-        <link href="/css/style.css" rel="stylesheet" type="text/css" media="all">
-        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-      <!-- <title>Redirigir al navegador a otra URL</title> 
-       <META HTTP-EQUIV="REFRESH" CONTENT="5;URL=index2.html"> -->
-    </head>
-    
-    <body>
-        
-        
+<head>
+    <title>Hello WebSocket</title>
+    <script src="/js/sockjs-0.3.4.js"></script>
+    <script src="/js/stomp.js"></script>
+    <script type="module" src="/js/stomp-ws.js"></script>
+
+    <link href="/css/style.css" rel="stylesheet" type="text/css" media="all">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <!-- <title>Redirigir al navegador a otra URL</title>
+     <META HTTP-EQUIV="REFRESH" CONTENT="5;URL=index2.html"> -->
+</head>
+
+<body>
+
+
+<HR width=100%>
+
+<body BACKGROUND="http://aupu.de/wp-content/uploads/2014/09/light-grey-2.jpg" TEXT="Black">
+<IMG SRC="thumbnail_logo lab de informatica_nuevo.jpg" ALIGN=center WIDTH=300 HEIGHT=100 ALT="Obra de K. Haring">
+<h1 ALIGN=center>Pantallas de información</h1>
+
+
+<h1 ALIGN=center>Laboratorios de la decanatura de Sistemas </h1>
+
 <HR width=100% align="left">
-          
-   <BODY BACKGROUND="http://aupu.de/wp-content/uploads/2014/09/light-grey-2.jpg" TEXT="Black">
-   <h1 ALIGN=center>Pantallas de información</h1>
-   
-   
-    
-    <h1 ALIGN=center>Laboratorios de la decanatura de Sistemas </h1>
-    <HR width=100% align="left">
-    <IMG SRC="thumbnail_logo lab de informatica_nuevo.jpg" WIDTH=300 HEIGHT=100 BORDER=0 VSPACE=30  HSPACE=165 ALT="Obra de K. Haring"> 
-    <canvas id="myCanvas"  width="1000" height="500" style="border:10px solid #d3d3d3;">
-        Your browser does not support the HTML5 canvas tag.</canvas>
-   
-    
-    
-                         <!--  Nombres de los laboratorios -->
-    
-                        <!-- <script>
-                            var c = document.getElementById("myCanvas");
-                            var ctx = c.getContext("2d");
-                            var miimagen= new Image();
-                            //miimagen.src="http://laboratorio.is.escuelaing.edu.co:8080/silabinfoap/images/laboratorioInformaticaLogo.png";
-                            miimagen.onload =funtion(){
-                                  //ctx.drawImage(miimagen,0,0);
-                            }
-                         </script>-->
-                         <script>
-                            var c = document.getElementById("myCanvas");
-                            var ctx = c.getContext("2d");
-                            ctx.font = "15px Georgia";
-                            ctx.fillText("Laboratorio de Software", 750, 280);
-                         </script>
-                         <script>
-                            var c = document.getElementById("myCanvas");
-                            var ctx = c.getContext("2d");
-                            ctx.font = "15px Georgia";
-                            ctx.fillText("Laboratorio de Plataformas", 350, 280);
-                         </script>
-                         <script>
-                            var c = document.getElementById("myCanvas");
-                            var ctx = c.getContext("2d");
-                            ctx.font = "15px Georgia";
-                            ctx.fillText("Laboratorio de Redes", 50, 280);
-                         </script>
-                         <script>
-                            var c = document.getElementById("myCanvas");
-                            var ctx = c.getContext("2d");
-                            ctx.font = "15px Georgia";
-                            ctx.fillText("Laboratorio de Sistemas B0", 630, 150);
-                         </script>
-                         <script>
-                            var c = document.getElementById("myCanvas");
-                            var ctx = c.getContext("2d");
-                            ctx.font = "15px Georgia";
-                            ctx.fillText("Laboratorio de Multimedia", 50, 15);
-                         </script>
-                         
-                         
-                         
-                           <!--  puestos de computadores de los laboratorios -->
-                         <script>
-                                var c = document.getElementById("myCanvas");
-                                var ctx = c.getContext("2d");
-                                // Create gradient
-                                var grd = ctx.createLinearGradient(0,0,200,0);
-                                grd.addColorStop(0,"#DBA901");
-                                // Fill with gradient
-                                ctx.fillStyle = grd;
-                                ctx.fill();
-                                ctx.fillRect(635,300,30,200);
-                         </script>
-                        <!--Puesto de pantallas 2--> 
-                         <script>
-                                var c = document.getElementById("myCanvas");
-                                var ctx = c.getContext("2d");
-                                // Create gradient
-                                var grd = ctx.createLinearGradient(0,0,200,0);
-                                grd.addColorStop(0,"#DBA901");
-
-                                // Fill with gradient
-                                ctx.fillStyle = grd;
-
-                                ctx.fill();
-                                ctx.fillRect(730,300,60,200);
-                        </script>
-                        <!--Puesto de pantallas 3--> 
-                         <script>
-                                var c = document.getElementById("myCanvas");
-                                var ctx = c.getContext("2d");
-                                // Create gradient
-                                var grd = ctx.createLinearGradient(0,0,200,0);
-                                grd.addColorStop(0,"#DBA901");
-
-                                // Fill with gradient
-                                ctx.fillStyle = grd;
-
-                                ctx.fill();
-                                ctx.fillRect(850,300,60,200);
-                        </script>
-                        <!--Puesto de pantallas 4--> 
-                        <script>
-                                var c = document.getElementById("myCanvas");
-                                var ctx = c.getContext("2d");
-                                // Create gradient
-                                var grd = ctx.createLinearGradient(0,0,200,0);
-                                grd.addColorStop(0,"#DBA901");
-
-                                // Fill with gradient
-                                ctx.fillStyle = grd;
-
-                                ctx.fill();
-                                ctx.fillRect(970,300,30,200);
-                        </script>
-
-                        <script>
-                                var c = document.getElementById("myCanvas");
-                                var ctx = c.getContext("2d");
-                                // Create gradient
-                                var grd = ctx.createLinearGradient(0,0,200,0);
-                                grd.addColorStop(0,"#DBA901");
-
-                                // Fill with gradient
-                                ctx.fillStyle = grd;
-
-                                ctx.fill();
-                                ctx.fillRect(635,265,40,5);
-                        </script>
-
-  
-            
-        <!--Puesto de pantallas 1--> 
-                         <script>
-                                var c = document.getElementById("myCanvas");
-                                var ctx = c.getContext("2d");
-                                // Create gradient
-                                var grd = ctx.createLinearGradient(0,0,200,0);
-                                grd.addColorStop(0,"#DBA901");
-
-                                // Fill with gradient
-                                ctx.fillStyle = grd;
-
-                                ctx.fill();
-                                ctx.fillRect(550,300,50,200);
-                        </script>
-       <!--Puesto de pantallas 2--> 
-                        <script>
-                               var c = document.getElementById("myCanvas");
-                               var ctx = c.getContext("2d");
-                               // Create gradient
-                               var grd = ctx.createLinearGradient(0,0,200,0);
-                               grd.addColorStop(0,"#DBA901");
-
-                               // Fill with gradient
-                               ctx.fillStyle = grd;
-
-                               ctx.fill();
-                               ctx.fillRect(400,300,90,200);
-                       </script>
-       <!--Puesto de pantallas 3--> 
-                        <script>
-                               var c = document.getElementById("myCanvas");
-                               var ctx = c.getContext("2d");
-                               // Create gradient
-                               var grd = ctx.createLinearGradient(0,0,200,0);
-                               grd.addColorStop(0,"#DBA901");
-
-                               // Fill with gradient
-                               ctx.fillStyle = grd;
-
-                               ctx.fill();
-                               ctx.fillRect(280,300,50,200);
-                       </script>
-        
-        
-                        <script>
-                                var c = document.getElementById("myCanvas");
-                                var ctx = c.getContext("2d");
-                                // Create gradient
-                                var grd = ctx.createLinearGradient(0,0,200,0);
-                                grd.addColorStop(0,"#DBA901");
-
-                                // Fill with gradient
-                                ctx.fillStyle = grd;
-
-                                ctx.fill();
-                                ctx.fillRect(550,265,50,5);
-                        </script>
-          <!--Puesto de pantallas 1--> 
-                        <script>
-                                var c = document.getElementById("myCanvas");
-                                var ctx = c.getContext("2d");
-                                // Create gradient
-                                var grd = ctx.createLinearGradient(0,0,200,0);
-                                grd.addColorStop(0,"#DBA901");
-
-                                // Fill with gradient
-                                ctx.fillStyle = grd;
-
-                                ctx.fill();
-                                ctx.fillRect(0,300,50,200);
-                        </script>
-        <!--Puesto de pantallas 2--> 
-                        <script>
-                               var c = document.getElementById("myCanvas");
-                               var ctx = c.getContext("2d");
-                               // Create gradient
-                               var grd = ctx.createLinearGradient(0,0,200,0);
-                               grd.addColorStop(0,"#DBA901");
-
-                               // Fill with gradient
-                               ctx.fillStyle = grd;
-
-                               ctx.fill();
-                               ctx.fillRect(130,300,80,200);
-                       </script>
-
-
-                       <script>
-                               var c = document.getElementById("myCanvas");
-                               var ctx = c.getContext("2d");
-                               // Create gradient
-                               var grd = ctx.createLinearGradient(0,0,200,0);
-                               grd.addColorStop(0,"#DBA901");
-
-                               // Fill with gradient
-                               ctx.fillStyle = grd;
-
-                               ctx.fill();
-                               ctx.fillRect(230,265,50,5);
-                       </script>
-                      
-                       <script>
-                                var c = document.getElementById("myCanvas");
-                                var ctx = c.getContext("2d");
-                                ctx.beginPath();
-                                ctx.arc(50,230,10,0,2*Math.PI);
-                                ctx.fillStyle="#00FF00";
-                                ctx.fill(); 
-                                ctx.stroke();
-                           </script>
-                           
-                          <script>
-                          var c = document.getElementById("myCanvas");
-                          var ctx = c.getContext("2d");
-                          ctx.font = "20px Georgia";
-                          ctx.fillText("Libre", 75, 235);
-                          </script>
-         
-                           
-                           <script>
-                                var c = document.getElementById("myCanvas");
-                                var ctx = c.getContext("2d");
-                                ctx.beginPath();
-                                ctx.arc(200,230,10,0,2*Math.PI);
-                                ctx.fillStyle="#B40404";
-                                ctx.fill(); 
-                                ctx.stroke();
-                           </script>
-                          
-                          <script>
-                          var c = document.getElementById("myCanvas");
-                          var ctx = c.getContext("2d");
-                          ctx.font = "20px Georgia";
-                          ctx.fillText("Ocupado", 230, 235);
-                          </script>
-        
-   
-                          
-                  <!-- laboratorio de Software --> 
-                           <!--Puesto de pantallas 1--> 
-                           <!--computador 1 al 4-->
-                                        <script>
-                                        var c = document.getElementById("myCanvas");
-                                        var ctx = c.getContext("2d");
-                                        ctx.beginPath();
-                                        ctx.arc(650,330,8,0,2*Math.PI);
-                                        ctx.fillStyle="#00FF00";
-                                        ctx.fill(); 
-                                        ctx.stroke();
-
-                                        </script>
-                                         <script>
-                                        var c = document.getElementById("myCanvas");
-                                        var ctx = c.getContext("2d");
-                                        ctx.beginPath();
-                                        ctx.arc(650,380,8,0,2*Math.PI);
-                                        ctx.fillStyle="#00FF00";
-                                        ctx.fill(); 
-                                        ctx.stroke();
-
-                                        </script>
-
-                                        <script>
-                                        var c = document.getElementById("myCanvas");
-                                        var ctx = c.getContext("2d");
-
-                                        ctx.beginPath();
-                                        ctx.arc(650,430,8,0,2*Math.PI);
-                                        ctx.fillStyle="#00FF00";
-                                        ctx.fill();
-                                        ctx.stroke();
-
-                                        </script>
-
-                                        <script>
-                                        var c = document.getElementById("myCanvas");
-                                        var ctx = c.getContext("2d");
-
-                                        ctx.beginPath();
-                                        ctx.arc(650,480,8,0,2*Math.PI);
-                                        ctx.fillStyle="#00FF00";
-                                        ctx.fill(); 
-                                        ctx.stroke();
-                                        </script>
-
-
-
-                                           <!--computador 5 al 12-->
-                                        <script>
-                                        var c = document.getElementById("myCanvas");
-                                        var ctx = c.getContext("2d");
-                                        ctx.beginPath();
-                                        ctx.arc(745,480,8,0,2*Math.PI);
-                                        ctx.fillStyle="#00FF00";
-                                        ctx.fill(); 
-                                        ctx.stroke();
-
-                                        </script>
-                                         <script>
-                                        var c = document.getElementById("myCanvas");
-                                        var ctx = c.getContext("2d");
-                                        ctx.beginPath();
-                                        ctx.arc(745,430,8,0,2*Math.PI);
-                                        ctx.fillStyle="#00FF00";
-                                        ctx.fill(); 
-                                        ctx.stroke();
-
-                                        </script>
-
-                                        <script>
-                                        var c = document.getElementById("myCanvas");
-                                        var ctx = c.getContext("2d");
-
-                                        ctx.beginPath();
-                                        ctx.arc(745,380,8,0,2*Math.PI);
-                                        ctx.fillStyle="#00FF00";
-                                        ctx.fill();
-                                        ctx.stroke();
-
-                                        </script>
-                                        <script>
-                                        var c = document.getElementById("myCanvas");
-                                        var ctx = c.getContext("2d");
-
-                                        ctx.beginPath();
-                                        ctx.arc(745,330,8,0,2*Math.PI);
-                                        ctx.fillStyle="#00FF00";
-                                        ctx.fill(); 
-                                        ctx.stroke();
-                                        </script>
-
-                                        
-                                        
-                                        
-                                        
-                                        
-                                        <script>
-                                        var c = document.getElementById("myCanvas");
-                                        var ctx = c.getContext("2d");
-                                        ctx.beginPath();
-                                        ctx.arc(775,330,8,0,2*Math.PI);
-                                        ctx.fillStyle="#00FF00";
-                                        ctx.fill(); 
-                                        ctx.stroke();
-
-                                        </script>
-                                         <script>
-                                        var c = document.getElementById("myCanvas");
-                                        var ctx = c.getContext("2d");
-                                        ctx.beginPath();
-                                        ctx.arc(775,380,8,0,2*Math.PI);
-                                        ctx.fillStyle="#00FF00";
-                                        ctx.fill(); 
-                                        ctx.stroke();
-
-                                        </script>
-
-                                        <script>
-                                        var c = document.getElementById("myCanvas");
-                                        var ctx = c.getContext("2d");
-
-                                        ctx.beginPath();
-                                        ctx.arc(775,430,8,0,2*Math.PI);
-                                        ctx.fillStyle="#00FF00";
-                                        ctx.fill();
-                                        ctx.stroke();
-
-                                        </script>
-
-                                        <script>
-                                        var c = document.getElementById("myCanvas");
-                                        var ctx = c.getContext("2d");
-
-                                        ctx.beginPath();
-                                        ctx.arc(775,480,8,0,2*Math.PI);
-                                        ctx.fillStyle="#00FF00";
-                                        ctx.fill(); 
-                                        ctx.stroke();
-                                        </script>
-
-                                           <!--computador 13 al 20-->
-                                        <script>
-                                        var c = document.getElementById("myCanvas");
-                                        var ctx = c.getContext("2d");
-                                        ctx.beginPath();
-                                        ctx.arc(865,480,8,0,2*Math.PI);
-                                        ctx.fillStyle="#00FF00";
-                                        ctx.fill(); 
-                                        ctx.stroke();
-
-                                        </script>
-                                         <script>
-                                        var c = document.getElementById("myCanvas");
-                                        var ctx = c.getContext("2d");
-                                        ctx.beginPath();
-                                        ctx.arc(865,430,8,0,2*Math.PI);
-                                        ctx.fillStyle="#00FF00";
-                                        ctx.fill(); 
-                                        ctx.stroke();
-
-                                        </script>
-
-                                        <script>
-                                        var c = document.getElementById("myCanvas");
-                                        var ctx = c.getContext("2d");
-
-                                        ctx.beginPath();
-                                        ctx.arc(865,380,8,0,2*Math.PI);
-                                        ctx.fillStyle="#00FF00";
-                                        ctx.fill();
-                                        ctx.stroke();
-
-                                        </script>
-                                        <script>
-                                        var c = document.getElementById("myCanvas");
-                                        var ctx = c.getContext("2d");
-
-                                        ctx.beginPath();
-                                        ctx.arc(865,330,8,0,2*Math.PI);
-                                        ctx.fillStyle="#00FF00";
-                                        ctx.fill(); 
-                                        ctx.stroke();
-                                        </script>
-
-                                        <script>
-                                        var c = document.getElementById("myCanvas");
-                                        var ctx = c.getContext("2d");
-                                        ctx.beginPath();
-                                        ctx.arc(895,330,8,0,2*Math.PI);
-                                        ctx.fillStyle="#00FF00";
-                                        ctx.fill(); 
-                                        ctx.stroke();
-
-                                        </script>
-                                         <script>
-                                        var c = document.getElementById("myCanvas");
-                                        var ctx = c.getContext("2d");
-                                        ctx.beginPath();
-                                        ctx.arc(895,380,8,0,2*Math.PI);
-                                        ctx.fillStyle="#00FF00";
-                                        ctx.fill(); 
-                                        ctx.stroke();
-
-                                        </script>
-
-                                        <script>
-                                        var c = document.getElementById("myCanvas");
-                                        var ctx = c.getContext("2d");
-
-                                        ctx.beginPath();
-                                        ctx.arc(895,430,8,0,2*Math.PI);
-                                        ctx.fillStyle="#00FF00";
-                                        ctx.fill();
-                                        ctx.stroke();
-
-                                        </script>
-
-                                        <script>
-                                        var c = document.getElementById("myCanvas");
-                                        var ctx = c.getContext("2d");
-
-                                        ctx.beginPath();
-                                        ctx.arc(895,480,8,0,2*Math.PI);
-                                        ctx.fillStyle="#00FF00";
-                                        ctx.fill(); 
-                                        ctx.stroke();
-                                        </script>
-
-
-                                        <!--computador 21 al 24-->
-                                        <script>
-                                        var c = document.getElementById("myCanvas");
-                                        var ctx = c.getContext("2d");
-                                        ctx.beginPath();
-                                        ctx.arc(985,330,8,0,2*Math.PI);
-                                        ctx.fillStyle="#00FF00";
-                                        ctx.fill(); 
-                                        ctx.stroke();
-
-                                        </script>
-                                         <script>
-                                        var c = document.getElementById("myCanvas");
-                                        var ctx = c.getContext("2d");
-                                        ctx.beginPath();
-                                        ctx.arc(985,380,8,0,2*Math.PI);
-                                        ctx.fillStyle="#00FF00";
-                                        ctx.fill(); 
-                                        ctx.stroke();
-
-                                        </script>
-
-                                        <script>
-                                        var c = document.getElementById("myCanvas");
-                                        var ctx = c.getContext("2d");
-
-                                        ctx.beginPath();
-                                        ctx.arc(985,430,8,0,2*Math.PI);
-                                        ctx.fillStyle="#00FF00";
-                                        ctx.fill();
-                                        ctx.stroke();
-
-                                        </script>
-
-                                        
-                                        
-                                        <script>
-                                        var c = document.getElementById("myCanvas");
-                                        var ctx = c.getContext("2d");
-
-                                        ctx.beginPath();
-                                        ctx.arc(985,480,8,0,2*Math.PI);
-                                        ctx.fillStyle="#00FF00";
-                                        ctx.fill();
-                                        ctx.stroke();
-
-                                        </script>
-
-                        
-                                        
-                                        
-                                        
-       <!--Laboratorio de plataformas -->  
-                
-                        <!--computador 1 al 4-->
-                                <script>
-                                var c = document.getElementById("myCanvas");
-                                var ctx = c.getContext("2d");
-                                ctx.beginPath();
-                                ctx.arc(310,320,8,0,2*Math.PI);
-                                ctx.fillStyle="#00FF00";
-                                ctx.fill(); 
-                                ctx.stroke();
-
-                                </script>
-                                 <script>
-                                var c = document.getElementById("myCanvas");
-                                var ctx = c.getContext("2d");
-                                ctx.beginPath();
-                                ctx.arc(310,360,8,0,2*Math.PI);
-                                ctx.fillStyle="#00FF00";
-                                ctx.fill(); 
-                                ctx.stroke();
-
-                                </script>
-
-                                <script>
-                                var c = document.getElementById("myCanvas");
-                                var ctx = c.getContext("2d");
-                                ctx.beginPath();
-                                ctx.arc(310,400,8,0,2*Math.PI);
-                                ctx.fillStyle="#00FF00";
-                                ctx.fill();
-                                ctx.stroke();
-
-                                </script>
-
-                                <script>
-                                var c = document.getElementById("myCanvas");
-                                var ctx = c.getContext("2d");
-
-                                ctx.beginPath();
-                                ctx.arc(310,440,8,0,2*Math.PI);
-                                ctx.fillStyle="#00FF00";
-                                ctx.fill(); 
-                                ctx.stroke();
-                                </script>
-                                
-                                
-                               <script>
-                                var c = document.getElementById("myCanvas");
-                                var ctx = c.getContext("2d");
-
-                                ctx.beginPath();
-                                ctx.arc(310,480,8,0,2*Math.PI);
-                                ctx.fillStyle="#00FF00";
-                                ctx.fill(); 
-                                ctx.stroke();
-                                </script>
-
-  <!--computador 5 al 12-->
-                                <script>
-                                var c = document.getElementById("myCanvas");
-                                var ctx = c.getContext("2d");
-                                ctx.beginPath();
-                                ctx.arc(420,320,8,0,2*Math.PI);
-                                ctx.fillStyle="#00FF00";
-                                ctx.fill(); 
-                                ctx.stroke();
-
-                                </script>
-                                 <script>
-                                var c = document.getElementById("myCanvas");
-                                var ctx = c.getContext("2d");
-                                ctx.beginPath();
-                                ctx.arc(420,350,8,0,2*Math.PI);
-                                ctx.fillStyle="#00FF00";
-                                ctx.fill(); 
-                                ctx.stroke();
-
-                                </script>
-
-                                <script>
-                                var c = document.getElementById("myCanvas");
-                                var ctx = c.getContext("2d");
-
-                                ctx.beginPath();
-                                ctx.arc(420,350,8,0,2*Math.PI);
-                                ctx.fillStyle="#00FF00";
-                                ctx.fill();
-                                ctx.stroke();
-
-                                </script>
-                                <script>
-                                var c = document.getElementById("myCanvas");
-                                var ctx = c.getContext("2d");
-
-                                ctx.beginPath();
-                                ctx.arc(420,380,8,0,2*Math.PI);
-                                ctx.fillStyle="#00FF00";
-                                ctx.fill(); 
-                                ctx.stroke();
-                                </script>
-
-                                <script>
-                                var c = document.getElementById("myCanvas");
-                                var ctx = c.getContext("2d");
-                                ctx.beginPath();
-                                ctx.arc(420,410,8,0,2*Math.PI);
-                                ctx.fillStyle="#00FF00";
-                                ctx.fill(); 
-                                ctx.stroke();
-
-                                </script>
-                                 <script>
-                                var c = document.getElementById("myCanvas");
-                                var ctx = c.getContext("2d");
-                                ctx.beginPath();
-                                ctx.arc(420,440,8,0,2*Math.PI);
-                                ctx.fillStyle="#00FF00";
-                                ctx.fill(); 
-                                ctx.stroke();
-
-                                </script>
-
-                                <script>
-                                var c = document.getElementById("myCanvas");
-                                var ctx = c.getContext("2d");
-                                ctx.beginPath();
-                                ctx.arc(420,470,8,0,2*Math.PI);
-                                ctx.fillStyle="#00FF00";
-                                ctx.fill();
-                                ctx.stroke();
-
-                                </script>
-
-                                <script>
-                                var c = document.getElementById("myCanvas");
-                                var ctx = c.getContext("2d");
-                                ctx.beginPath();
-                                ctx.arc(470,320,8,0,2*Math.PI);
-                                ctx.fillStyle="#00FF00";
-                                ctx.fill(); 
-                                ctx.stroke();
-                                </script>
-
-                                  
-                                <script>
-                                var c = document.getElementById("myCanvas");
-                                var ctx = c.getContext("2d");
-                                ctx.beginPath();
-                                ctx.arc(470,360,8,0,2*Math.PI);
-                                ctx.fillStyle="#00FF00";
-                                ctx.fill(); 
-                                ctx.stroke();
-
-                                </script>
-                                 <script>
-                                var c = document.getElementById("myCanvas");
-                                var ctx = c.getContext("2d");
-                                ctx.beginPath();
-                                ctx.arc(470,400,8,0,2*Math.PI);
-                                ctx.fillStyle="#00FF00";
-                                ctx.fill(); 
-                                ctx.stroke();
-
-                                </script>
-
-                                <script>
-                                var c = document.getElementById("myCanvas");
-                                var ctx = c.getContext("2d");
-
-                                ctx.beginPath();
-                                ctx.arc(470,440,8,0,2*Math.PI);
-                                ctx.fillStyle="#00FF00";
-                                ctx.fill();
-                                ctx.stroke();
-
-                                </script>
-                                <script>
-                                var c = document.getElementById("myCanvas");
-                                var ctx = c.getContext("2d");
-
-                                ctx.beginPath();
-                                ctx.arc(470,480,8,0,2*Math.PI);
-                                ctx.fillStyle="#00FF00";
-                                ctx.fill(); 
-                                ctx.stroke();
-                                </script>
-
-                                
-                                <script>
-                                var c = document.getElementById("myCanvas");
-                                var ctx = c.getContext("2d");
-
-                                ctx.beginPath();
-                                ctx.arc(570,320,8,0,2*Math.PI);
-                                ctx.fillStyle="#00FF00";
-                                ctx.fill(); 
-                                ctx.stroke();
-                                </script>
-                              
-                                <script>
-                                var c = document.getElementById("myCanvas");
-                                var ctx = c.getContext("2d");
-
-                                ctx.beginPath();
-                                ctx.arc(570,360,8,0,2*Math.PI);
-                                ctx.fillStyle="#00FF00";
-                                ctx.fill(); 
-                                ctx.stroke();
-                                </script>
-                              
-                                <script>
-                                var c = document.getElementById("myCanvas");
-                                var ctx = c.getContext("2d");
-
-                                ctx.beginPath();
-                                ctx.arc(570,400,8,0,2*Math.PI);
-                                ctx.fillStyle="#00FF00";
-                                ctx.fill(); 
-                                ctx.stroke();
-                                </script>
-
-                                <script>
-                                var c = document.getElementById("myCanvas");
-                                var ctx = c.getContext("2d");
-
-                                ctx.beginPath();
-                                ctx.arc(570,440,8,0,2*Math.PI);
-                                ctx.fillStyle="#00FF00";
-                                ctx.fill(); 
-                                ctx.stroke();
-                                </script>
-
-                                <script>
-                                var c = document.getElementById("myCanvas");
-                                var ctx = c.getContext("2d");
-
-                                ctx.beginPath();
-                                ctx.arc(570,480,8,0,2*Math.PI);
-                                ctx.fillStyle="#00FF00";
-                                ctx.fill(); 
-                                ctx.stroke();
-                                </script>
-
-
-
-
-             <!-- Laboratorio de Redes    -->
-
-              <!--computador 1 al 4-->
-                                <script>
-                                var c = document.getElementById("myCanvas");
-                                var ctx = c.getContext("2d");
-                                ctx.beginPath();
-                                ctx.arc(20,330,8,0,2*Math.PI);
-                                ctx.fillStyle="#00FF00";
-                                ctx.fill(); 
-                                ctx.stroke();
-
-                                </script>
-                                 <script>
-                                var c = document.getElementById("myCanvas");
-                                var ctx = c.getContext("2d");
-                                ctx.beginPath();
-                                ctx.arc(20,380,8,0,2*Math.PI);
-                                ctx.fillStyle="#00FF00";
-                                ctx.fill(); 
-                                ctx.stroke();
-
-                                </script>
-
-                                <script>
-                                var c = document.getElementById("myCanvas");
-                                var ctx = c.getContext("2d");
-
-                                ctx.beginPath();
-                                ctx.arc(20,430,8,0,2*Math.PI);
-                                ctx.fillStyle="#00FF00";
-                                ctx.fill();
-                                ctx.stroke();
-
-                                </script>
-
-                                <script>
-                                var c = document.getElementById("myCanvas");
-                                var ctx = c.getContext("2d");
-
-                                ctx.beginPath();
-                                ctx.arc(20,480,8,0,2*Math.PI);
-                                ctx.fillStyle="#00FF00";
-                                ctx.fill(); 
-                                ctx.stroke();
-                                </script>
-
-
-
-                                   <!--computador 5 al 12-->
-                                <script>
-                                var c = document.getElementById("myCanvas");
-                                var ctx = c.getContext("2d");
-                                ctx.beginPath();
-                                ctx.arc(150,480,8,0,2*Math.PI);
-                                ctx.fillStyle="#00FF00";
-                                ctx.fill(); 
-                                ctx.stroke();
-
-                                </script>
-                                 <script>
-                                var c = document.getElementById("myCanvas");
-                                var ctx = c.getContext("2d");
-                                ctx.beginPath();
-                                ctx.arc(150,430,8,0,2*Math.PI);
-                                ctx.fillStyle="#00FF00";
-                                ctx.fill(); 
-                                ctx.stroke();
-
-                                </script>
-
-                                <script>
-                                var c = document.getElementById("myCanvas");
-                                var ctx = c.getContext("2d");
-
-                                ctx.beginPath();
-                                ctx.arc(150,380,8,0,2*Math.PI);
-                                ctx.fillStyle="#00FF00";
-                                ctx.fill();
-                                ctx.stroke();
-
-                                </script>
-                                <script>
-                                var c = document.getElementById("myCanvas");
-                                var ctx = c.getContext("2d");
-
-                                ctx.beginPath();
-                                ctx.arc(150,330,8,0,2*Math.PI);
-                                ctx.fillStyle="#00FF00";
-                                ctx.fill(); 
-                                ctx.stroke();
-                                </script>
-
-                                <script>
-                                var c = document.getElementById("myCanvas");
-                                var ctx = c.getContext("2d");
-                                ctx.beginPath();
-                                ctx.arc(190,330,8,0,2*Math.PI);
-                                ctx.fillStyle="#00FF00";
-                                ctx.fill(); 
-                                ctx.stroke();
-
-                                </script>
-                                 <script>
-                                var c = document.getElementById("myCanvas");
-                                var ctx = c.getContext("2d");
-                                ctx.beginPath();
-                                ctx.arc(190,380,8,0,2*Math.PI);
-                                ctx.fillStyle="#00FF00";
-                                ctx.fill(); 
-                                ctx.stroke();
-
-                                </script>
-
-                                <script>
-                                var c = document.getElementById("myCanvas");
-                                var ctx = c.getContext("2d");
-
-                                ctx.beginPath();
-                                ctx.arc(190,430,8,0,2*Math.PI);
-                                ctx.fillStyle="#00FF00";
-                                ctx.fill();
-                                ctx.stroke();
-
-                                </script>
-
-                                <script>
-                                var c = document.getElementById("myCanvas");
-                                var ctx = c.getContext("2d");
-
-                                ctx.beginPath();
-                                ctx.arc(190,480,8,0,2*Math.PI);
-                                ctx.fillStyle="#00FF00";
-                                ctx.fill(); 
-                                ctx.stroke();
-                                </script>
-
-  <!--Computadores del laboratorio de Multimedia-->
-                                <script>
-                                    var c = document.getElementById("myCanvas");
-                                    var ctx = c.getContext("2d");
-
-                                    ctx.beginPath();
-                                    ctx.arc(30,30,8,0,2*Math.PI);
-                                    ctx.fillStyle="#00FF00";
-                                    ctx.fill(); 
-                                    ctx.stroke();
-                                </script>
-                                          <script>
-                                    var c = document.getElementById("myCanvas");
-                                    var ctx = c.getContext("2d");
-
-                                    ctx.beginPath();
-                                    ctx.arc(60,30,8,0,2*Math.PI);
-                                    ctx.fillStyle="#00FF00";
-                                    ctx.fill(); 
-                                    ctx.stroke();
-                                </script>
-                                          <script>
-                                    var c = document.getElementById("myCanvas");
-                                    var ctx = c.getContext("2d");
-
-                                    ctx.beginPath();
-                                    ctx.arc(30,70,8,0,2*Math.PI);
-                                    ctx.fillStyle="#00FF00";
-                                    ctx.fill(); 
-                                    ctx.stroke();
-                                </script>
-                                          <script>
-                                    var c = document.getElementById("myCanvas");
-                                    var ctx = c.getContext("2d");
-
-                                    ctx.beginPath();
-                                    ctx.arc(60,70,8,0,2*Math.PI);
-                                    ctx.fillStyle="#00FF00";
-                                    ctx.fill(); 
-                                    ctx.stroke();
-                                </script>
-                                          <script>
-                                    var c = document.getElementById("myCanvas");
-                                    var ctx = c.getContext("2d");
-
-                                    ctx.beginPath();
-                                    ctx.arc(180,30,8,0,2*Math.PI);
-                                    ctx.fillStyle="#00FF00";
-                                    ctx.fill(); 
-                                    ctx.stroke();
-                                </script>
-                                          <script>
-                                    var c = document.getElementById("myCanvas");
-                                    var ctx = c.getContext("2d");
-
-                                    ctx.beginPath();
-                                    ctx.arc(210,30,8,0,2*Math.PI);
-                                    ctx.fillStyle="#00FF00";
-                                    ctx.fill(); 
-                                    ctx.stroke();
-                                </script>
-                                          <script>
-                                    var c = document.getElementById("myCanvas");
-                                    var ctx = c.getContext("2d");
-
-                                    ctx.beginPath();
-                                    ctx.arc(180,70,8,0,2*Math.PI);
-                                    ctx.fillStyle="#00FF00";
-                                    ctx.fill(); 
-                                    ctx.stroke();
-                                </script>
-                                          <script>
-                                    var c = document.getElementById("myCanvas");
-                                    var ctx = c.getContext("2d");
-
-                                    ctx.beginPath();
-                                    ctx.arc(210,70,8,0,2*Math.PI);
-                                    ctx.fillStyle="#00FF00";
-                                    ctx.fill(); 
-                                    ctx.stroke();
-                                </script>
-                                          <script>
-                                    var c = document.getElementById("myCanvas");
-                                    var ctx = c.getContext("2d");
-
-                                    ctx.beginPath();
-                                    ctx.arc(80,130,8,0,2*Math.PI);
-                                    ctx.fillStyle="#00FF00";
-                                    ctx.fill(); 
-                                    ctx.stroke();
-                                </script>
-                                          <script>
-                                    var c = document.getElementById("myCanvas");
-                                    var ctx = c.getContext("2d");
-
-                                    ctx.beginPath();
-                                    ctx.arc(80,160,8,0,2*Math.PI);
-                                    ctx.fillStyle="#00FF00";
-                                    ctx.fill(); 
-                                    ctx.stroke();
-                                </script>
-                                          <script>
-                                    var c = document.getElementById("myCanvas");
-                                    var ctx = c.getContext("2d");
-
-                                    ctx.beginPath();
-                                    ctx.arc(120,130,8,0,2*Math.PI);
-                                    ctx.fillStyle="#00FF00";
-                                    ctx.fill(); 
-                                    ctx.stroke();
-                                </script>
-                                 <script>
-                                    var c = document.getElementById("myCanvas");
-                                    var ctx = c.getContext("2d");
-
-                                    ctx.beginPath();
-                                    ctx.arc(120,160,8,0,2*Math.PI);
-                                    ctx.fillStyle="#00FF00";
-                                    ctx.fill(); 
-                                    ctx.stroke();
-                                </script>
-                                
-                                
-                                
-                                <!-- Divisiones de las mesas de computo-->
-                                   <script>
-                                    var canvas = document.getElementById('myCanvas');
-                                    var context = canvas.getContext('2d');
-                                    context.beginPath();
-                                    context.moveTo(660, 10);
-                                    context.lineTo(660, 80);
-                                    context.lineWidth = 5;
-                                    // set line color
-                                    context.strokeStyle = '#FF4000';
-                                    context.stroke();
-                                  </script>
-
-                                  <script>
-                                    var canvas = document.getElementById('myCanvas');
-                                    var context = canvas.getContext('2d');
-                                    context.beginPath();
-                                    context.moveTo(660, 78);
-                                    context.lineTo(690, 110);
-                                    context.lineWidth = 5;
-                                    // set line color
-                                    context.strokeStyle = '#FF4000';
-                                    context.stroke();
-                                  </script>
-
-                                 <script>
-                                    var canvas = document.getElementById('myCanvas');
-                                    var context = canvas.getContext('2d');
-                                    context.beginPath();
-                                    context.moveTo(660, 78);
-                                    context.lineTo(630, 110);
-                                    context.lineWidth = 5;
-                                    // set line color
-                                    context.strokeStyle = '#FF4000';
-                                    context.stroke();
-                                  </script>
-
-
-
-                                    <script>
-                                    var canvas = document.getElementById('myCanvas');
-                                    var context = canvas.getContext('2d');
-                                    context.beginPath();
-                                    context.moveTo(760, 10);
-                                    context.lineTo(760, 80);
-                                    context.lineWidth = 5;
-                                    // set line color
-                                    context.strokeStyle = '#DF0101';
-                                    context.stroke();
-                                  </script>
-
-                                  <script>
-                                    var canvas = document.getElementById('myCanvas');
-                                    var context = canvas.getContext('2d');
-                                    context.beginPath();
-                                    context.moveTo(760, 78);
-                                    context.lineTo(790, 110);
-                                    context.lineWidth = 5;
-                                    // set line color
-                                    context.strokeStyle = '#DF0101';
-                                    context.stroke();
-                                  </script>
-
-                                 <script>
-                                    var canvas = document.getElementById('myCanvas');
-                                    var context = canvas.getContext('2d');
-                                    context.beginPath();
-                                    context.moveTo(760, 78);
-                                    context.lineTo(730, 110);
-                                    context.lineWidth = 5;
-                                    // set line color
-                                    context.strokeStyle = '#DF0101';
-                                    context.stroke();
-                                  </script>
-
-
-
-
-                                    <script>
-                                    var canvas = document.getElementById('myCanvas');
-                                    var context = canvas.getContext('2d');
-                                    context.beginPath();
-                                    context.moveTo(860, 10);
-                                    context.lineTo(860, 80);
-                                    context.lineWidth = 5;
-                                    // set line color
-                                    context.strokeStyle = '#40FF00';
-                                    context.stroke();
-                                  </script>
-
-                                  <script>
-                                    var canvas = document.getElementById('myCanvas');
-                                    var context = canvas.getContext('2d');
-                                    context.beginPath();
-                                    context.moveTo(860, 78);
-                                    context.lineTo(890, 110);
-                                    context.lineWidth = 5;
-                                    // set line color
-                                    context.strokeStyle = '#40FF00';
-                                    context.stroke();
-                                  </script>
-
-                                 <script>
-                                    var canvas = document.getElementById('myCanvas');
-                                    var context = canvas.getContext('2d');
-                                    context.beginPath();
-                                    context.moveTo(860, 78);
-                                    context.lineTo(830, 110);
-                                    context.lineWidth = 5;
-                                    // set line color
-                                    context.strokeStyle = '#40FF00';
-                                    context.stroke();
-                                  </script>
-
-
-                                      <script>
-                                    var canvas = document.getElementById('myCanvas');
-                                    var context = canvas.getContext('2d');
-                                    context.beginPath();
-                                    context.moveTo(960, 10);
-                                    context.lineTo(960, 80);
-                                    context.lineWidth = 5;
-                                    // set line color
-                                    context.strokeStyle = '#0101DF';
-                                    context.stroke();
-                                  </script>
-
-                                  <script>
-                                    var canvas = document.getElementById('myCanvas');
-                                    var context = canvas.getContext('2d');
-                                    context.beginPath();
-                                    context.moveTo(960, 78);
-                                    context.lineTo(990, 110);
-                                    context.lineWidth = 5;
-                                    // set line color
-                                    context.strokeStyle = '#0101DF';
-                                    context.stroke();
-                                  </script>
-
-                                 <script>
-                                    var canvas = document.getElementById('myCanvas');
-                                    var context = canvas.getContext('2d');
-                                    context.beginPath();
-                                    context.moveTo(960, 78);
-                                    context.lineTo(930, 110);
-                                    context.lineWidth = 5;
-                                    // set line color
-                                    context.strokeStyle = '#0101DF';
-                                    context.stroke();
-                                  </script>
-
-
-
-
-                                  <script>
-                                    var canvas = document.getElementById('myCanvas');
-                                    var context = canvas.getContext('2d');
-                                    context.beginPath();
-                                    context.moveTo(912, 180);
-                                    context.lineTo(880, 210);
-                                    context.lineWidth = 5;
-                                    // set line color
-                                    context.strokeStyle = '#FF4000';
-                                    context.stroke();
-                                  </script>
-
-                                  <script>
-                                    var canvas = document.getElementById('myCanvas');
-                                    var context = canvas.getContext('2d');
-                                    context.beginPath();
-                                    context.moveTo(980, 180);
-                                    context.lineTo(910, 180);
-                                    context.lineWidth = 5;
-                                    // set line color
-                                    context.strokeStyle = '#FF4000';
-                                    context.stroke();
-                                  </script>
-
-                                 <script>
-                                    var canvas = document.getElementById('myCanvas');
-                                    var context = canvas.getContext('2d');
-                                    context.beginPath();
-                                    context.moveTo(912, 180);
-                                    context.lineTo(880, 150);
-                                    context.lineWidth = 5;
-                                    // set line color
-                                    context.strokeStyle = '#FF4000';
-                                    context.stroke();
-                                  </script>
-
-
-
-                                   
-                                 <script>
-                                    var canvas = document.getElementById('myCanvas');
-                                    var context = canvas.getContext('2d');
-                                    context.beginPath();
-                                    context.moveTo(0, 50);
-                                    context.lineTo(90, 50);
-                                    context.lineWidth = 5;
-                                    // set line color
-                                    context.strokeStyle = '#00FF00';
-                                    context.stroke();
-                                  </script>
-
-                                 <script>
-                                    var canvas = document.getElementById('myCanvas');
-                                    var context = canvas.getContext('2d');
-                                    context.beginPath();
-                                    context.moveTo(150, 50);
-                                    context.lineTo(240, 50);
-                                    context.lineWidth = 5;
-                                    // set line color
-                                    context.strokeStyle = '#00FF00';
-                                    context.stroke();
-                                  </script>
-
-                                 <script>
-                                    var canvas = document.getElementById('myCanvas');
-                                    var context = canvas.getContext('2d');
-                                    context.beginPath();
-                                    context.moveTo(100, 100);
-                                    context.lineTo(100, 190);
-                                    context.lineWidth = 5;
-                                    // set line color
-                                    context.strokeStyle = '#00FF00';
-                                    context.stroke();
-                                  </script>
-                                  
-                                  
-                                  <script>
-                                    var canvas = document.getElementById('myCanvas');
-                                    var context = canvas.getContext('2d');
-                                    context.beginPath();
-                                    context.moveTo(230, 100);
-                                    context.lineTo(250, 190);
-                                    context.lineWidth = 5;
-                                    // set line color
-                                    context.strokeStyle = '#AEB404';
-                                    context.stroke();
-                                  </script>
-             
-
-
-                          <!-- divisiones --> 
-                                   <script>
-                                    var canvas = document.getElementById('myCanvas');
-                                    var context = canvas.getContext('2d');
-                                    context.beginPath();
-                                    context.moveTo(600, 0);
-                                    context.lineTo(600, 500);
-                                    context.lineWidth = 10;
-                                    // set line color
-                                    context.strokeStyle = '#D8D8D8';
-                                    context.stroke();
-                                  </script>
-
-                                  <script>
-                                    var canvas = document.getElementById('myCanvas');
-                                    var context = canvas.getContext('2d');
-                                    context.beginPath();
-                                    context.moveTo(250, 0);
-                                    context.lineTo(250, 190);
-                                    context.lineWidth = 10;
-                                    // set line color
-                                    context.strokeStyle = '#D8D8D8';
-                                    context.stroke();
-                                  </script>
-                                  
-                                   <script>
-                                    var canvas = document.getElementById('myCanvas');
-                                    var context = canvas.getContext('2d');
-                                    context.beginPath();
-                                    context.moveTo(0,190);
-                                    context.lineTo(600, 190);
-                                    context.lineWidth = 10;
-                                    // set line color
-                                    context.strokeStyle = '#D8D8D8';
-                                    context.stroke();
-                                  </script>
-
-
-                                   <script>
-                                    var canvas = document.getElementById('myCanvas');
-                                    var context = canvas.getContext('2d');
-                                    context.beginPath();
-                                    context.moveTo(0,260);
-                                    context.lineTo(1000, 260);
-                                    context.lineWidth = 10;
-                                    // set line color
-                                    context.strokeStyle = '#D8D8D8';
-                                    context.stroke();
-                                  </script>
-
-
-                                   <script>
-                                    var canvas = document.getElementById('myCanvas');
-                                    var context = canvas.getContext('2d');
-                                    context.beginPath();
-                                    context.moveTo(630,260);
-                                    context.lineTo(630, 500);
-                                    context.lineWidth = 10;
-                                    // set line color
-                                    context.strokeStyle = '#D8D8D8';
-                                    context.stroke();
-                                  </script>
-
-                                   <script>
-                                    var canvas = document.getElementById('myCanvas');
-                                    var context = canvas.getContext('2d');
-                                    context.beginPath();
-                                    context.moveTo(280,260);
-                                    context.lineTo(280,500);
-                                    context.lineWidth = 10;
-                                    // set line color
-                                    context.strokeStyle = '#D8D8D8';
-                                    context.stroke();
-                                  </script>
-                          
-                                                    
-                                    <script>
-                                     var canvas = document.getElementById('myCanvas');
-                                     var context = canvas.getContext('2d');
-                                     context.beginPath();
-
-                                     context.lineWidth = 1;
-                                     // set line color
-                                     context.strokeStyle = '#000000';
-                                     context.stroke();
-                                   </script>
-    
-      
-        <noscript><h2 style="color: #ff0000">Seems your browser doesn't support Javascript! Websoc
-                Javascript and reload this page!</h2></noscript>
-        <div>
-           
-        <div>
-            <button id="connect">Connect</button>
-            <button id="disconnect" disabled="disabled">Disconnect</button>
-        </div>
-        <div id="conversationDiv">
-            <label>Message to send?</label><input type="text" id="message" />
-            <button id="send">Send</button>
-            <p id="response"></p>
-        </div>
-        </div>
-               
-               
-
-    </body>
+
+<canvas id="myCanvas" width="1000" height="500" style="border:10px solid #d3d3d3;">
+    Your browser does not support the HTML5 canvas tag.
+</canvas>
+
+
+<!--  Nombres de los laboratorios -->
+
+<!-- <script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    var miimagen= new Image();
+    //miimagen.src="http://laboratorio.is.escuelaing.edu.co:8080/silabinfoap/images/laboratorioInformaticaLogo.png";
+    miimagen.onload =funtion(){
+          //ctx.drawImage(miimagen,0,0);
+    }
+ </script>-->
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    ctx.font = "15px Georgia";
+    ctx.fillText("Laboratorio de Software", 750, 280);
+</script>
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    ctx.font = "15px Georgia";
+    ctx.fillText("Laboratorio de Plataformas", 350, 280);
+</script>
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    ctx.font = "15px Georgia";
+    ctx.fillText("Laboratorio de Redes", 50, 280);
+</script>
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    ctx.font = "15px Georgia";
+    ctx.fillText("Laboratorio de Sistemas B0", 630, 150);
+</script>
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    ctx.font = "15px Georgia";
+    ctx.fillText("Laboratorio de Multimedia", 50, 15);
+</script>
+
+
+<!--  puestos de computadores de los laboratorios -->
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    // Create gradient
+    var grd = ctx.createLinearGradient(0, 0, 200, 0);
+    grd.addColorStop(0, "#DBA901");
+    // Fill with gradient
+    ctx.fillStyle = grd;
+    ctx.fill();
+    ctx.fillRect(635, 300, 30, 200);
+</script>
+<!--Puesto de pantallas 2-->
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    // Create gradient
+    var grd = ctx.createLinearGradient(0, 0, 200, 0);
+    grd.addColorStop(0, "#DBA901");
+
+    // Fill with gradient
+    ctx.fillStyle = grd;
+
+    ctx.fill();
+    ctx.fillRect(730, 300, 60, 200);
+</script>
+<!--Puesto de pantallas 3-->
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    // Create gradient
+    var grd = ctx.createLinearGradient(0, 0, 200, 0);
+    grd.addColorStop(0, "#DBA901");
+
+    // Fill with gradient
+    ctx.fillStyle = grd;
+
+    ctx.fill();
+    ctx.fillRect(850, 300, 60, 200);
+</script>
+<!--Puesto de pantallas 4-->
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    // Create gradient
+    var grd = ctx.createLinearGradient(0, 0, 200, 0);
+    grd.addColorStop(0, "#DBA901");
+
+    // Fill with gradient
+    ctx.fillStyle = grd;
+
+    ctx.fill();
+    ctx.fillRect(970, 300, 30, 200);
+</script>
+
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    // Create gradient
+    var grd = ctx.createLinearGradient(0, 0, 200, 0);
+    grd.addColorStop(0, "#DBA901");
+
+    // Fill with gradient
+    ctx.fillStyle = grd;
+
+    ctx.fill();
+    ctx.fillRect(635, 265, 40, 5);
+</script>
+
+
+<!--Puesto de pantallas 1-->
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    // Create gradient
+    var grd = ctx.createLinearGradient(0, 0, 200, 0);
+    grd.addColorStop(0, "#DBA901");
+
+    // Fill with gradient
+    ctx.fillStyle = grd;
+
+    ctx.fill();
+    ctx.fillRect(550, 300, 50, 200);
+</script>
+<!--Puesto de pantallas 2-->
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    // Create gradient
+    var grd = ctx.createLinearGradient(0, 0, 200, 0);
+    grd.addColorStop(0, "#DBA901");
+
+    // Fill with gradient
+    ctx.fillStyle = grd;
+
+    ctx.fill();
+    ctx.fillRect(400, 300, 90, 200);
+</script>
+<!--Puesto de pantallas 3-->
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    // Create gradient
+    var grd = ctx.createLinearGradient(0, 0, 200, 0);
+    grd.addColorStop(0, "#DBA901");
+
+    // Fill with gradient
+    ctx.fillStyle = grd;
+
+    ctx.fill();
+    ctx.fillRect(280, 300, 50, 200);
+</script>
+
+
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    // Create gradient
+    var grd = ctx.createLinearGradient(0, 0, 200, 0);
+    grd.addColorStop(0, "#DBA901");
+
+    // Fill with gradient
+    ctx.fillStyle = grd;
+
+    ctx.fill();
+    ctx.fillRect(550, 265, 50, 5);
+</script>
+<!--Puesto de pantallas 1-->
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    // Create gradient
+    var grd = ctx.createLinearGradient(0, 0, 200, 0);
+    grd.addColorStop(0, "#DBA901");
+
+    // Fill with gradient
+    ctx.fillStyle = grd;
+
+    ctx.fill();
+    ctx.fillRect(0, 300, 50, 200);
+</script>
+<!--Puesto de pantallas 2-->
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    // Create gradient
+    var grd = ctx.createLinearGradient(0, 0, 200, 0);
+    grd.addColorStop(0, "#DBA901");
+
+    // Fill with gradient
+    ctx.fillStyle = grd;
+
+    ctx.fill();
+    ctx.fillRect(130, 300, 80, 200);
+</script>
+
+
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    // Create gradient
+    var grd = ctx.createLinearGradient(0, 0, 200, 0);
+    grd.addColorStop(0, "#DBA901");
+
+    // Fill with gradient
+    ctx.fillStyle = grd;
+
+    ctx.fill();
+    ctx.fillRect(230, 265, 50, 5);
+</script>
+
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    ctx.beginPath();
+    ctx.arc(50, 230, 10, 0, 2 * Math.PI);
+    ctx.fillStyle = "#00FF00";
+    ctx.fill();
+    ctx.stroke();
+</script>
+
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    ctx.font = "20px Georgia";
+    ctx.fillText("Libre", 75, 235);
+</script>
+
+
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    ctx.beginPath();
+    ctx.arc(200, 230, 10, 0, 2 * Math.PI);
+    ctx.fillStyle = "#B40404";
+    ctx.fill();
+    ctx.stroke();
+</script>
+
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    ctx.font = "20px Georgia";
+    ctx.fillText("Ocupado", 230, 235);
+</script>
+
+
+<!-- laboratorio de Software -->
+<!--Puesto de pantallas 1-->
+<!--computador 1 al 4-->
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    ctx.beginPath();
+    ctx.arc(650, 330, 8, 0, 2 * Math.PI);
+    ctx.fillStyle = "#00FF00";
+    ctx.fill();
+    ctx.stroke();
+
+</script>
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    ctx.beginPath();
+    ctx.arc(650, 380, 8, 0, 2 * Math.PI);
+    ctx.fillStyle = "#00FF00";
+    ctx.fill();
+    ctx.stroke();
+
+</script>
+
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+
+    ctx.beginPath();
+    ctx.arc(650, 430, 8, 0, 2 * Math.PI);
+    ctx.fillStyle = "#00FF00";
+    ctx.fill();
+    ctx.stroke();
+
+</script>
+
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+
+    ctx.beginPath();
+    ctx.arc(650, 480, 8, 0, 2 * Math.PI);
+    ctx.fillStyle = "#00FF00";
+    ctx.fill();
+    ctx.stroke();
+</script>
+
+
+<!--computador 5 al 12-->
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    ctx.beginPath();
+    ctx.arc(745, 480, 8, 0, 2 * Math.PI);
+    ctx.fillStyle = "#00FF00";
+    ctx.fill();
+    ctx.stroke();
+
+</script>
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    ctx.beginPath();
+    ctx.arc(745, 430, 8, 0, 2 * Math.PI);
+    ctx.fillStyle = "#00FF00";
+    ctx.fill();
+    ctx.stroke();
+
+</script>
+
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+
+    ctx.beginPath();
+    ctx.arc(745, 380, 8, 0, 2 * Math.PI);
+    ctx.fillStyle = "#00FF00";
+    ctx.fill();
+    ctx.stroke();
+
+</script>
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+
+    ctx.beginPath();
+    ctx.arc(745, 330, 8, 0, 2 * Math.PI);
+    ctx.fillStyle = "#00FF00";
+    ctx.fill();
+    ctx.stroke();
+</script>
+
+
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    ctx.beginPath();
+    ctx.arc(775, 330, 8, 0, 2 * Math.PI);
+    ctx.fillStyle = "#00FF00";
+    ctx.fill();
+    ctx.stroke();
+
+</script>
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    ctx.beginPath();
+    ctx.arc(775, 380, 8, 0, 2 * Math.PI);
+    ctx.fillStyle = "#00FF00";
+    ctx.fill();
+    ctx.stroke();
+
+</script>
+
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+
+    ctx.beginPath();
+    ctx.arc(775, 430, 8, 0, 2 * Math.PI);
+    ctx.fillStyle = "#00FF00";
+    ctx.fill();
+    ctx.stroke();
+
+</script>
+
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+
+    ctx.beginPath();
+    ctx.arc(775, 480, 8, 0, 2 * Math.PI);
+    ctx.fillStyle = "#00FF00";
+    ctx.fill();
+    ctx.stroke();
+</script>
+
+<!--computador 13 al 20-->
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    ctx.beginPath();
+    ctx.arc(865, 480, 8, 0, 2 * Math.PI);
+    ctx.fillStyle = "#00FF00";
+    ctx.fill();
+    ctx.stroke();
+
+</script>
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    ctx.beginPath();
+    ctx.arc(865, 430, 8, 0, 2 * Math.PI);
+    ctx.fillStyle = "#00FF00";
+    ctx.fill();
+    ctx.stroke();
+
+</script>
+
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+
+    ctx.beginPath();
+    ctx.arc(865, 380, 8, 0, 2 * Math.PI);
+    ctx.fillStyle = "#00FF00";
+    ctx.fill();
+    ctx.stroke();
+
+</script>
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+
+    ctx.beginPath();
+    ctx.arc(865, 330, 8, 0, 2 * Math.PI);
+    ctx.fillStyle = "#00FF00";
+    ctx.fill();
+    ctx.stroke();
+</script>
+
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    ctx.beginPath();
+    ctx.arc(895, 330, 8, 0, 2 * Math.PI);
+    ctx.fillStyle = "#00FF00";
+    ctx.fill();
+    ctx.stroke();
+
+</script>
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    ctx.beginPath();
+    ctx.arc(895, 380, 8, 0, 2 * Math.PI);
+    ctx.fillStyle = "#00FF00";
+    ctx.fill();
+    ctx.stroke();
+
+</script>
+
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+
+    ctx.beginPath();
+    ctx.arc(895, 430, 8, 0, 2 * Math.PI);
+    ctx.fillStyle = "#00FF00";
+    ctx.fill();
+    ctx.stroke();
+
+</script>
+
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+
+    ctx.beginPath();
+    ctx.arc(895, 480, 8, 0, 2 * Math.PI);
+    ctx.fillStyle = "#00FF00";
+    ctx.fill();
+    ctx.stroke();
+</script>
+
+
+<!--computador 21 al 24-->
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    ctx.beginPath();
+    ctx.arc(985, 330, 8, 0, 2 * Math.PI);
+    ctx.fillStyle = "#00FF00";
+    ctx.fill();
+    ctx.stroke();
+
+</script>
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    ctx.beginPath();
+    ctx.arc(985, 380, 8, 0, 2 * Math.PI);
+    ctx.fillStyle = "#00FF00";
+    ctx.fill();
+    ctx.stroke();
+
+</script>
+
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+
+    ctx.beginPath();
+    ctx.arc(985, 430, 8, 0, 2 * Math.PI);
+    ctx.fillStyle = "#00FF00";
+    ctx.fill();
+    ctx.stroke();
+
+</script>
+
+
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+
+    ctx.beginPath();
+    ctx.arc(985, 480, 8, 0, 2 * Math.PI);
+    ctx.fillStyle = "#00FF00";
+    ctx.fill();
+    ctx.stroke();
+
+</script>
+
+
+<!--Laboratorio de plataformas -->
+
+<!--computador 1 al 4-->
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    ctx.beginPath();
+    ctx.arc(310, 320, 8, 0, 2 * Math.PI);
+    ctx.fillStyle = "#00FF00";
+    ctx.fill();
+    ctx.stroke();
+
+</script>
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    ctx.beginPath();
+    ctx.arc(310, 360, 8, 0, 2 * Math.PI);
+    ctx.fillStyle = "#00FF00";
+    ctx.fill();
+    ctx.stroke();
+
+</script>
+
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    ctx.beginPath();
+    ctx.arc(310, 400, 8, 0, 2 * Math.PI);
+    ctx.fillStyle = "#00FF00";
+    ctx.fill();
+    ctx.stroke();
+
+</script>
+
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+
+    ctx.beginPath();
+    ctx.arc(310, 440, 8, 0, 2 * Math.PI);
+    ctx.fillStyle = "#00FF00";
+    ctx.fill();
+    ctx.stroke();
+</script>
+
+
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+
+    ctx.beginPath();
+    ctx.arc(310, 480, 8, 0, 2 * Math.PI);
+    ctx.fillStyle = "#00FF00";
+    ctx.fill();
+    ctx.stroke();
+</script>
+
+<!--computador 5 al 12-->
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    ctx.beginPath();
+    ctx.arc(420, 320, 8, 0, 2 * Math.PI);
+    ctx.fillStyle = "#00FF00";
+    ctx.fill();
+    ctx.stroke();
+
+</script>
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    ctx.beginPath();
+    ctx.arc(420, 350, 8, 0, 2 * Math.PI);
+    ctx.fillStyle = "#00FF00";
+    ctx.fill();
+    ctx.stroke();
+
+</script>
+
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+
+    ctx.beginPath();
+    ctx.arc(420, 350, 8, 0, 2 * Math.PI);
+    ctx.fillStyle = "#00FF00";
+    ctx.fill();
+    ctx.stroke();
+
+</script>
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+
+    ctx.beginPath();
+    ctx.arc(420, 380, 8, 0, 2 * Math.PI);
+    ctx.fillStyle = "#00FF00";
+    ctx.fill();
+    ctx.stroke();
+</script>
+
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    ctx.beginPath();
+    ctx.arc(420, 410, 8, 0, 2 * Math.PI);
+    ctx.fillStyle = "#00FF00";
+    ctx.fill();
+    ctx.stroke();
+
+</script>
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    ctx.beginPath();
+    ctx.arc(420, 440, 8, 0, 2 * Math.PI);
+    ctx.fillStyle = "#00FF00";
+    ctx.fill();
+    ctx.stroke();
+
+</script>
+
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    ctx.beginPath();
+    ctx.arc(420, 470, 8, 0, 2 * Math.PI);
+    ctx.fillStyle = "#00FF00";
+    ctx.fill();
+    ctx.stroke();
+
+</script>
+
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    ctx.beginPath();
+    ctx.arc(470, 320, 8, 0, 2 * Math.PI);
+    ctx.fillStyle = "#00FF00";
+    ctx.fill();
+    ctx.stroke();
+</script>
+
+
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    ctx.beginPath();
+    ctx.arc(470, 360, 8, 0, 2 * Math.PI);
+    ctx.fillStyle = "#00FF00";
+    ctx.fill();
+    ctx.stroke();
+
+</script>
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    ctx.beginPath();
+    ctx.arc(470, 400, 8, 0, 2 * Math.PI);
+    ctx.fillStyle = "#00FF00";
+    ctx.fill();
+    ctx.stroke();
+
+</script>
+
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+
+    ctx.beginPath();
+    ctx.arc(470, 440, 8, 0, 2 * Math.PI);
+    ctx.fillStyle = "#00FF00";
+    ctx.fill();
+    ctx.stroke();
+
+</script>
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+
+    ctx.beginPath();
+    ctx.arc(470, 480, 8, 0, 2 * Math.PI);
+    ctx.fillStyle = "#00FF00";
+    ctx.fill();
+    ctx.stroke();
+</script>
+
+
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+
+    ctx.beginPath();
+    ctx.arc(570, 320, 8, 0, 2 * Math.PI);
+    ctx.fillStyle = "#00FF00";
+    ctx.fill();
+    ctx.stroke();
+</script>
+
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+
+    ctx.beginPath();
+    ctx.arc(570, 360, 8, 0, 2 * Math.PI);
+    ctx.fillStyle = "#00FF00";
+    ctx.fill();
+    ctx.stroke();
+</script>
+
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+
+    ctx.beginPath();
+    ctx.arc(570, 400, 8, 0, 2 * Math.PI);
+    ctx.fillStyle = "#00FF00";
+    ctx.fill();
+    ctx.stroke();
+</script>
+
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+
+    ctx.beginPath();
+    ctx.arc(570, 440, 8, 0, 2 * Math.PI);
+    ctx.fillStyle = "#00FF00";
+    ctx.fill();
+    ctx.stroke();
+</script>
+
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+
+    ctx.beginPath();
+    ctx.arc(570, 480, 8, 0, 2 * Math.PI);
+    ctx.fillStyle = "#00FF00";
+    ctx.fill();
+    ctx.stroke();
+</script>
+
+
+<!-- Laboratorio de Redes    -->
+
+<!--computador 1 al 4-->
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    ctx.beginPath();
+    ctx.arc(20, 330, 8, 0, 2 * Math.PI);
+    ctx.fillStyle = "#00FF00";
+    ctx.fill();
+    ctx.stroke();
+
+</script>
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    ctx.beginPath();
+    ctx.arc(20, 380, 8, 0, 2 * Math.PI);
+    ctx.fillStyle = "#00FF00";
+    ctx.fill();
+    ctx.stroke();
+
+</script>
+
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+
+    ctx.beginPath();
+    ctx.arc(20, 430, 8, 0, 2 * Math.PI);
+    ctx.fillStyle = "#00FF00";
+    ctx.fill();
+    ctx.stroke();
+
+</script>
+
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+
+    ctx.beginPath();
+    ctx.arc(20, 480, 8, 0, 2 * Math.PI);
+    ctx.fillStyle = "#00FF00";
+    ctx.fill();
+    ctx.stroke();
+</script>
+
+
+<!--computador 5 al 12-->
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    ctx.beginPath();
+    ctx.arc(150, 480, 8, 0, 2 * Math.PI);
+    ctx.fillStyle = "#00FF00";
+    ctx.fill();
+    ctx.stroke();
+
+</script>
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    ctx.beginPath();
+    ctx.arc(150, 430, 8, 0, 2 * Math.PI);
+    ctx.fillStyle = "#00FF00";
+    ctx.fill();
+    ctx.stroke();
+
+</script>
+
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+
+    ctx.beginPath();
+    ctx.arc(150, 380, 8, 0, 2 * Math.PI);
+    ctx.fillStyle = "#00FF00";
+    ctx.fill();
+    ctx.stroke();
+
+</script>
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+
+    ctx.beginPath();
+    ctx.arc(150, 330, 8, 0, 2 * Math.PI);
+    ctx.fillStyle = "#00FF00";
+    ctx.fill();
+    ctx.stroke();
+</script>
+
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    ctx.beginPath();
+    ctx.arc(190, 330, 8, 0, 2 * Math.PI);
+    ctx.fillStyle = "#00FF00";
+    ctx.fill();
+    ctx.stroke();
+
+</script>
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+    ctx.beginPath();
+    ctx.arc(190, 380, 8, 0, 2 * Math.PI);
+    ctx.fillStyle = "#00FF00";
+    ctx.fill();
+    ctx.stroke();
+
+</script>
+
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+
+    ctx.beginPath();
+    ctx.arc(190, 430, 8, 0, 2 * Math.PI);
+    ctx.fillStyle = "#00FF00";
+    ctx.fill();
+    ctx.stroke();
+
+</script>
+
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+
+    ctx.beginPath();
+    ctx.arc(190, 480, 8, 0, 2 * Math.PI);
+    ctx.fillStyle = "#00FF00";
+    ctx.fill();
+    ctx.stroke();
+</script>
+
+<!--Computadores del laboratorio de Multimedia-->
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+
+    ctx.beginPath();
+    ctx.arc(30, 30, 8, 0, 2 * Math.PI);
+    ctx.fillStyle = "#00FF00";
+    ctx.fill();
+    ctx.stroke();
+</script>
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+
+    ctx.beginPath();
+    ctx.arc(60, 30, 8, 0, 2 * Math.PI);
+    ctx.fillStyle = "#00FF00";
+    ctx.fill();
+    ctx.stroke();
+</script>
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+
+    ctx.beginPath();
+    ctx.arc(30, 70, 8, 0, 2 * Math.PI);
+    ctx.fillStyle = "#00FF00";
+    ctx.fill();
+    ctx.stroke();
+</script>
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+
+    ctx.beginPath();
+    ctx.arc(60, 70, 8, 0, 2 * Math.PI);
+    ctx.fillStyle = "#00FF00";
+    ctx.fill();
+    ctx.stroke();
+</script>
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+
+    ctx.beginPath();
+    ctx.arc(180, 30, 8, 0, 2 * Math.PI);
+    ctx.fillStyle = "#00FF00";
+    ctx.fill();
+    ctx.stroke();
+</script>
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+
+    ctx.beginPath();
+    ctx.arc(210, 30, 8, 0, 2 * Math.PI);
+    ctx.fillStyle = "#00FF00";
+    ctx.fill();
+    ctx.stroke();
+</script>
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+
+    ctx.beginPath();
+    ctx.arc(180, 70, 8, 0, 2 * Math.PI);
+    ctx.fillStyle = "#00FF00";
+    ctx.fill();
+    ctx.stroke();
+</script>
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+
+    ctx.beginPath();
+    ctx.arc(210, 70, 8, 0, 2 * Math.PI);
+    ctx.fillStyle = "#00FF00";
+    ctx.fill();
+    ctx.stroke();
+</script>
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+
+    ctx.beginPath();
+    ctx.arc(80, 130, 8, 0, 2 * Math.PI);
+    ctx.fillStyle = "#00FF00";
+    ctx.fill();
+    ctx.stroke();
+</script>
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+
+    ctx.beginPath();
+    ctx.arc(80, 160, 8, 0, 2 * Math.PI);
+    ctx.fillStyle = "#00FF00";
+    ctx.fill();
+    ctx.stroke();
+</script>
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+
+    ctx.beginPath();
+    ctx.arc(120, 130, 8, 0, 2 * Math.PI);
+    ctx.fillStyle = "#00FF00";
+    ctx.fill();
+    ctx.stroke();
+</script>
+<script>
+    var c = document.getElementById("myCanvas");
+    var ctx = c.getContext("2d");
+
+    ctx.beginPath();
+    ctx.arc(120, 160, 8, 0, 2 * Math.PI);
+    ctx.fillStyle = "#00FF00";
+    ctx.fill();
+    ctx.stroke();
+</script>
+
+
+<!-- Divisiones de las mesas de computo-->
+<script>
+    var canvas = document.getElementById('myCanvas');
+    var context = canvas.getContext('2d');
+    context.beginPath();
+    context.moveTo(660, 10);
+    context.lineTo(660, 80);
+    context.lineWidth = 5;
+    // set line color
+    context.strokeStyle = '#FF4000';
+    context.stroke();
+</script>
+
+<script>
+    var canvas = document.getElementById('myCanvas');
+    var context = canvas.getContext('2d');
+    context.beginPath();
+    context.moveTo(660, 78);
+    context.lineTo(690, 110);
+    context.lineWidth = 5;
+    // set line color
+    context.strokeStyle = '#FF4000';
+    context.stroke();
+</script>
+
+<script>
+    var canvas = document.getElementById('myCanvas');
+    var context = canvas.getContext('2d');
+    context.beginPath();
+    context.moveTo(660, 78);
+    context.lineTo(630, 110);
+    context.lineWidth = 5;
+    // set line color
+    context.strokeStyle = '#FF4000';
+    context.stroke();
+</script>
+
+
+<script>
+    var canvas = document.getElementById('myCanvas');
+    var context = canvas.getContext('2d');
+    context.beginPath();
+    context.moveTo(760, 10);
+    context.lineTo(760, 80);
+    context.lineWidth = 5;
+    // set line color
+    context.strokeStyle = '#DF0101';
+    context.stroke();
+</script>
+
+<script>
+    var canvas = document.getElementById('myCanvas');
+    var context = canvas.getContext('2d');
+    context.beginPath();
+    context.moveTo(760, 78);
+    context.lineTo(790, 110);
+    context.lineWidth = 5;
+    // set line color
+    context.strokeStyle = '#DF0101';
+    context.stroke();
+</script>
+
+<script>
+    var canvas = document.getElementById('myCanvas');
+    var context = canvas.getContext('2d');
+    context.beginPath();
+    context.moveTo(760, 78);
+    context.lineTo(730, 110);
+    context.lineWidth = 5;
+    // set line color
+    context.strokeStyle = '#DF0101';
+    context.stroke();
+</script>
+
+
+<script>
+    var canvas = document.getElementById('myCanvas');
+    var context = canvas.getContext('2d');
+    context.beginPath();
+    context.moveTo(860, 10);
+    context.lineTo(860, 80);
+    context.lineWidth = 5;
+    // set line color
+    context.strokeStyle = '#40FF00';
+    context.stroke();
+</script>
+
+<script>
+    var canvas = document.getElementById('myCanvas');
+    var context = canvas.getContext('2d');
+    context.beginPath();
+    context.moveTo(860, 78);
+    context.lineTo(890, 110);
+    context.lineWidth = 5;
+    // set line color
+    context.strokeStyle = '#40FF00';
+    context.stroke();
+</script>
+
+<script>
+    var canvas = document.getElementById('myCanvas');
+    var context = canvas.getContext('2d');
+    context.beginPath();
+    context.moveTo(860, 78);
+    context.lineTo(830, 110);
+    context.lineWidth = 5;
+    // set line color
+    context.strokeStyle = '#40FF00';
+    context.stroke();
+</script>
+
+
+<script>
+    var canvas = document.getElementById('myCanvas');
+    var context = canvas.getContext('2d');
+    context.beginPath();
+    context.moveTo(960, 10);
+    context.lineTo(960, 80);
+    context.lineWidth = 5;
+    // set line color
+    context.strokeStyle = '#0101DF';
+    context.stroke();
+</script>
+
+<script>
+    var canvas = document.getElementById('myCanvas');
+    var context = canvas.getContext('2d');
+    context.beginPath();
+    context.moveTo(960, 78);
+    context.lineTo(990, 110);
+    context.lineWidth = 5;
+    // set line color
+    context.strokeStyle = '#0101DF';
+    context.stroke();
+</script>
+
+<script>
+    var canvas = document.getElementById('myCanvas');
+    var context = canvas.getContext('2d');
+    context.beginPath();
+    context.moveTo(960, 78);
+    context.lineTo(930, 110);
+    context.lineWidth = 5;
+    // set line color
+    context.strokeStyle = '#0101DF';
+    context.stroke();
+</script>
+
+
+<script>
+    var canvas = document.getElementById('myCanvas');
+    var context = canvas.getContext('2d');
+    context.beginPath();
+    context.moveTo(912, 180);
+    context.lineTo(880, 210);
+    context.lineWidth = 5;
+    // set line color
+    context.strokeStyle = '#FF4000';
+    context.stroke();
+</script>
+
+<script>
+    var canvas = document.getElementById('myCanvas');
+    var context = canvas.getContext('2d');
+    context.beginPath();
+    context.moveTo(980, 180);
+    context.lineTo(910, 180);
+    context.lineWidth = 5;
+    // set line color
+    context.strokeStyle = '#FF4000';
+    context.stroke();
+</script>
+
+<script>
+    var canvas = document.getElementById('myCanvas');
+    var context = canvas.getContext('2d');
+    context.beginPath();
+    context.moveTo(912, 180);
+    context.lineTo(880, 150);
+    context.lineWidth = 5;
+    // set line color
+    context.strokeStyle = '#FF4000';
+    context.stroke();
+</script>
+
+
+<script>
+    var canvas = document.getElementById('myCanvas');
+    var context = canvas.getContext('2d');
+    context.beginPath();
+    context.moveTo(0, 50);
+    context.lineTo(90, 50);
+    context.lineWidth = 5;
+    // set line color
+    context.strokeStyle = '#00FF00';
+    context.stroke();
+</script>
+
+<script>
+    var canvas = document.getElementById('myCanvas');
+    var context = canvas.getContext('2d');
+    context.beginPath();
+    context.moveTo(150, 50);
+    context.lineTo(240, 50);
+    context.lineWidth = 5;
+    // set line color
+    context.strokeStyle = '#00FF00';
+    context.stroke();
+</script>
+
+<script>
+    var canvas = document.getElementById('myCanvas');
+    var context = canvas.getContext('2d');
+    context.beginPath();
+    context.moveTo(100, 100);
+    context.lineTo(100, 190);
+    context.lineWidth = 5;
+    // set line color
+    context.strokeStyle = '#00FF00';
+    context.stroke();
+</script>
+
+
+<script>
+    var canvas = document.getElementById('myCanvas');
+    var context = canvas.getContext('2d');
+    context.beginPath();
+    context.moveTo(230, 100);
+    context.lineTo(250, 190);
+    context.lineWidth = 5;
+    // set line color
+    context.strokeStyle = '#AEB404';
+    context.stroke();
+</script>
+
+
+<!-- divisiones -->
+<script>
+    var canvas = document.getElementById('myCanvas');
+    var context = canvas.getContext('2d');
+    context.beginPath();
+    context.moveTo(600, 0);
+    context.lineTo(600, 500);
+    context.lineWidth = 10;
+    // set line color
+    context.strokeStyle = '#D8D8D8';
+    context.stroke();
+</script>
+
+<script>
+    var canvas = document.getElementById('myCanvas');
+    var context = canvas.getContext('2d');
+    context.beginPath();
+    context.moveTo(250, 0);
+    context.lineTo(250, 190);
+    context.lineWidth = 10;
+    // set line color
+    context.strokeStyle = '#D8D8D8';
+    context.stroke();
+</script>
+
+<script>
+    var canvas = document.getElementById('myCanvas');
+    var context = canvas.getContext('2d');
+    context.beginPath();
+    context.moveTo(0, 190);
+    context.lineTo(600, 190);
+    context.lineWidth = 10;
+    // set line color
+    context.strokeStyle = '#D8D8D8';
+    context.stroke();
+</script>
+
+
+<script>
+    var canvas = document.getElementById('myCanvas');
+    var context = canvas.getContext('2d');
+    context.beginPath();
+    context.moveTo(0, 260);
+    context.lineTo(1000, 260);
+    context.lineWidth = 10;
+    // set line color
+    context.strokeStyle = '#D8D8D8';
+    context.stroke();
+</script>
+
+
+<script>
+    var canvas = document.getElementById('myCanvas');
+    var context = canvas.getContext('2d');
+    context.beginPath();
+    context.moveTo(630, 260);
+    context.lineTo(630, 500);
+    context.lineWidth = 10;
+    // set line color
+    context.strokeStyle = '#D8D8D8';
+    context.stroke();
+</script>
+
+<script>
+    var canvas = document.getElementById('myCanvas');
+    var context = canvas.getContext('2d');
+    context.beginPath();
+    context.moveTo(280, 260);
+    context.lineTo(280, 500);
+    context.lineWidth = 10;
+    // set line color
+    context.strokeStyle = '#D8D8D8';
+    context.stroke();
+</script>
+
+
+<script>
+    var canvas = document.getElementById('myCanvas');
+    var context = canvas.getContext('2d');
+    context.beginPath();
+
+    context.lineWidth = 1;
+    // set line color
+    context.strokeStyle = '#000000';
+    context.stroke();
+</script>
+
+
+<noscript><h2 style="color: #ff0000">Seems your browser doesn't support Javascript! Websoc
+    Javascript and reload this page!</h2></noscript>
+<div>
+
+    <div>
+        <button id="connect">Connect</button>
+        <button id="disconnect" disabled="disabled">Disconnect</button>
+    </div>
+    <div id="conversationDiv">
+        <label>Message to send?</label><input type="text" id="message"/>
+        <button id="send">Send</button>
+        <p id="response"></p>
+    </div>
+</div>
+
+
+</body>
+<script type="module" src="/js/b0App.js"></script>
 </html>
 
 

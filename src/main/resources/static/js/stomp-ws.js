@@ -65,13 +65,16 @@ var labiswComputers =
             {"sl24": {"posX": 985, "posY": 480}}
         ];
 
+
+export { b0computers, labiswComputers };
+
 function setConnected(connected) {
     document.getElementById('connect').disabled = connected;
     document.getElementById('disconnect').disabled = !connected;
     document.getElementById('conversationDiv').style.visibility = connected ? 'visible' : 'hidden';
     document.getElementById('response').innerHTML = '';
 }
-var timer = setInterval("connect()", 10000);
+var timer = setInterval(connect(), 10000);
 function connect() {
     var socket = new SockJS('/ws');
     stompClient = Stomp.over(socket);
@@ -109,7 +112,7 @@ function showB0(message) {
     //alert("entra function");
     var color = "#00FF00";
     var arregloDeCadenas = message.toString().split(",");
-    for (i = 0; i < b0computers.length; i++) {
+    for (var i = 0; i < b0computers.length; i++) {
         //alert("entra for "+'bl'+(i+1));
         if (arregloDeCadenas.includes('bl' + (i + 1))) {
             //  alert("entra if ");
