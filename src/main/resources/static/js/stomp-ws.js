@@ -118,6 +118,9 @@ function showB0(message) {
             //  alert("entra if ");
             color = "#B40404";
         }
+        else{
+            color = "#00FF00";
+        }
         var c1 = document.getElementById("myCanvas");
         var ctx1 = c1.getContext("2d");
         ctx1.beginPath();
@@ -136,6 +139,9 @@ function showB0(message) {
         if (arregloDeCadenas.includes('sl' + (i + 1))) {
             //  alert("entra if ");
             color = "#B40404";
+        }
+        else{
+            color = "#00FF00";
         }
         var c1 = document.getElementById("myCanvas");
         var ctx1 = c1.getContext("2d");
